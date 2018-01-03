@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://grackanil.top/"/>
-  <updated>2018-01-01T15:48:00.544Z</updated>
+  <updated>2018-01-03T03:55:37.322Z</updated>
   <id>http://grackanil.top/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>静态网站托管服务平台</title>
+    <link href="http://grackanil.top/2018/01/03/static-site-hosting-service/"/>
+    <id>http://grackanil.top/2018/01/03/static-site-hosting-service/</id>
+    <published>2018-01-03T03:55:37.000Z</published>
+    <updated>2018-01-03T03:55:37.322Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://oxwk2uou0.bkt.clouddn.com/hexo_Just%20magic.jpg" class="full-image"><br>简要罗列静态网站托管平台。<br><a id="more"></a></p><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近使用<code>Hexo</code>和<code>GitHub Pages</code>搭建个人静态主页，发现一些问题，遂做一个横向方案比较，了解一下具体的异同。有很多平台没有亲自实践，所以说明仅供记录参考，细节有待挖掘和更新。同时，如果您有其他推荐的方案，欢迎评论分享，持续更新：)</p><h2 id="GitHub-Pages-被设计为直接来源于GitHub仓库的个人、组织或项目主页。"><a href="#GitHub-Pages-被设计为直接来源于GitHub仓库的个人、组织或项目主页。" class="headerlink" title="GitHub Pages 被设计为直接来源于GitHub仓库的个人、组织或项目主页。"></a><a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> 被设计为直接来源于<code>GitHub</code>仓库的个人、组织或项目主页。</h2><ul><li>提供静态网站托管服务</li><li>不支持服务端代码，比如 PHP、Ruby 或 Python</li><li>GitHub Pages 提供的域名可以支持 HTTPS 访问</li><li>可以配置自定义的域名，但是无法给自定义的域名配置 SSL ，<code>HTTPS is not supported for GitHub Pages using custom domains.</code></li><li>响应速度还是有点慢</li><li>网站仓库小于<code>1GB</code>，带宽限制 <code>100GB/每月</code>，构建限制<code>10次/每小时</code></li></ul><h2 id="Netlify"><a href="#Netlify" class="headerlink" title="Netlify"></a><a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a></h2><ul><li>不支持后台逻辑运算能力的网页</li><li>如果要部署 Hexo 大体思路是，通过 CLI (命令行界面)将 md 渲染为静态网站，然后通过 git 部署到 Git 平台，然后使用 Netlify 的 webhook 自动抓取部署</li><li>具有全球CDN、持续部署、一键HTTPS等优势</li><li>能通过客户端 JS 与可重用 API 可以带来动态功能，炫酷。</li><li>可以使用 Hugo 静态网站生成器和 Hetlify 网站自动化系统配合，以解决 Github Pages 的不支持 HTTPS 和 响应慢的问题</li></ul><h2 id="Coding-Pages-由国内-Coding-提供"><a href="#Coding-Pages-由国内-Coding-提供" class="headerlink" title="Coding Pages 由国内 Coding 提供"></a><a href="https://coding.net/pages/" target="_blank" rel="noopener">Coding Pages</a> 由国内 Coding 提供</h2><ul><li>访问速度友好</li><li>可以做 GitHub Pages 和 Coding Pages 同时部署 Hexo，然后通过域名 DNS 解析，国外访问 GitHub Pages ，国内 访问 Coding Pages， 以优化访问速度</li><li>可以免费绑定多个自定义域名</li><li>自定义域名可以享有免费 SSL 证书，全站支持 HTTPS 协议</li><li>更新代码库就可以自动部署。服务器稳定，香港服务器国外支持也友好</li><li>新增动态页面部署</li><li>有一个小问题是，网站首页如果不放置官方『Hosted by Coding Pages』的链接，会系统添加中间『Hosted by Coding Pages』页面。</li></ul><h2 id="GitLab-Pages-是由-GitLab-提供，旨在为-GitLab-工程、个人、groups-创建网站。"><a href="#GitLab-Pages-是由-GitLab-提供，旨在为-GitLab-工程、个人、groups-创建网站。" class="headerlink" title="GitLab Pages 是由 GitLab 提供，旨在为 GitLab 工程、个人、groups 创建网站。"></a><a href="https://about.gitlab.com/features/pages/" target="_blank" rel="noopener">GitLab Pages</a> 是由 GitLab 提供，旨在为 GitLab 工程、个人、groups 创建网站。</h2><ul><li>可以使用任何静态网站生成器，如 Jekyll、Middleman、Hexo、Hugo、Pelican等</li><li>可以配置自定义域名 HTTPS，需要的是上传证书</li></ul><h2 id="Now"><a href="#Now" class="headerlink" title="Now"></a><a href="https://zeit.co/now" target="_blank" rel="noopener">Now</a></h2><ul><li>不仅支持静态网站托管，也支持 JavaScript(Node.js) 或者 Docker 驱动的网站，</li><li>可以使用 CLI 或者链接 Git 仓库</li><li>支持自定义域名，开启 HTTPS</li><li>传输基于 HTTP/2</li><li>不需要安装 Git 等源代码控制工具，不需要设置 keys 或者 tokens</li><li>实时部署。</li></ul><h2 id="Firebase-Hosting"><a href="#Firebase-Hosting" class="headerlink" title="Firebase Hosting"></a><a href="https://www.firebase.com/docs/hosting/" target="_blank" rel="noopener">Firebase Hosting</a></h2><ul><li>只能 CLI</li><li>支持自定义域名并支持开启 HTTPS</li><li>支持重定向和重写。</li></ul><h2 id="Bitbucket-Cloud"><a href="#Bitbucket-Cloud" class="headerlink" title="Bitbucket Cloud"></a><a href="https://confluence.atlassian.com/bitbucket/publishing-a-website-on-bitbucket-cloud-221449776.html" target="_blank" rel="noopener">Bitbucket Cloud</a></h2><ul><li>必须要通过 HTTPS 访问</li><li>不能自定义域名</li><li>所有项目的静态网站代码都只能放在专门的站点仓库里。</li><li>页面缓存 15 分钟，意味着改变不会立即可见。</li></ul><h2 id="aerobatic"><a href="#aerobatic" class="headerlink" title="aerobatic"></a><a href="https://www.aerobatic.com/" target="_blank" rel="noopener">aerobatic</a></h2><ul><li>可以支持 CLI 上传代码</li><li>自定义域名需要收费。</li></ul><h2 id="surge"><a href="#surge" class="headerlink" title="surge"></a><a href="https://surge.sh/" target="_blank" rel="noopener">surge</a></h2><ul><li>只支持 CLI</li><li>支持自定义域名，开启 SSL 是需要收费，同时需要自己上传证书</li></ul><blockquote><p>持续更新…</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://oxwk2uou0.bkt.clouddn.com/hexo_Just%20magic.jpg&quot; class=&quot;full-image&quot;&gt;&lt;br&gt;简要罗列静态网站托管平台。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="static site" scheme="http://grackanil.top/tags/static-site/"/>
+    
+      <category term="comparision" scheme="http://grackanil.top/tags/comparision/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo Tutorial - 基本搭建和配置</title>
