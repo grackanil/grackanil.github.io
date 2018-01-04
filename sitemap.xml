@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://grackanil.top/about/index.html</loc>
+    
+    <lastmod>2018-01-04T02:31:14.301Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://grackanil.top/2018/01/03/hexo-theme-tutorial/</loc>
     
     <lastmod>2018-01-03T13:30:44.433Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://grackanil.top/categories/index.html</loc>
     
     <lastmod>2018-01-02T08:37:04.072Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://grackanil.top/about/index.html</loc>
-    
-    <lastmod>2018-01-02T08:33:35.649Z</lastmod>
     
   </url>
   
