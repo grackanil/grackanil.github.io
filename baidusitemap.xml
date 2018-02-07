@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://grackanil.top/2018/01/31/runtime-load/</loc>
-    <lastmod>2018-02-01T06:25:16.351Z</lastmod>
+    <lastmod>2018-02-01T06:28:31.000Z</lastmod>
     <data>
         <display>
         <title>NSObject +(void)load 和+(void)initialize 方法的理解</title>
