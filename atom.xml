@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Grac Kanil</title>
   
-  <subtitle>「Go Big or Go Home.」</subtitle>
+  <subtitle>「以梦为马，不负韶华。」</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://grackanil.top/"/>
@@ -72,9 +72,9 @@ danger --&gt;
       <category term="tutorial" scheme="http://grackanil.top/categories/tutorial/"/>
     
     
-      <category term="hexo" scheme="http://grackanil.top/tags/hexo/"/>
-    
       <category term="tutorial" scheme="http://grackanil.top/tags/tutorial/"/>
+    
+      <category term="hexo" scheme="http://grackanil.top/tags/hexo/"/>
     
   </entry>
   
@@ -125,9 +125,9 @@ danger --&gt;
       <category term="tutorial" scheme="http://grackanil.top/categories/tutorial/"/>
     
     
-      <category term="hexo" scheme="http://grackanil.top/tags/hexo/"/>
-    
       <category term="tutorial" scheme="http://grackanil.top/tags/tutorial/"/>
+    
+      <category term="hexo" scheme="http://grackanil.top/tags/hexo/"/>
     
   </entry>
   
