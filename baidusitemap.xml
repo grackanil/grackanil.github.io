@@ -3,6 +3,50 @@
 
 
     
+  <url>
+    <loc>http://grackanil.top/2018/07/25/ruby-tutorial-environment/</loc>
+    <lastmod>2018-07-25T16:23:56.369Z</lastmod>
+    <data>
+        <display>
+        <title>Ruby 札记 - 浅谈和配置 Ruby</title>
+        <pubTime>2018-07-25T05:46:37.867Z</pubTime>
+        
+        <tag>tutorial</tag>
+         
+        <tag>Ruby</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ruby 札记" url="http://grackanil.top/categories/Ruby-%E6%9C%AD%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://grackanil.top/2018/01/31/runtime-load/</loc>
+    <lastmod>2018-07-25T09:40:42.157Z</lastmod>
+    <data>
+        <display>
+        <title>NSObject +(void)load 和+(void)initialize 方法的理解</title>
+        <pubTime>2018-01-31T09:13:39.722Z</pubTime>
+        
+        <tag>Objective-C</tag>
+         
+        <tag>runtime</tag>
+         
+         
+           
+             
+              <breadCrumb title="runtime" url="http://grackanil.top/categories/runtime/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://grackanil.top/2017/12/29/hexo-tutorial/</loc>
@@ -20,28 +64,6 @@
            
              
               <breadCrumb title="tutorial" url="http://grackanil.top/categories/tutorial/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://grackanil.top/2018/01/31/runtime-load/</loc>
-    <lastmod>2018-02-01T06:28:31.000Z</lastmod>
-    <data>
-        <display>
-        <title>NSObject +(void)load 和+(void)initialize 方法的理解</title>
-        <pubTime>2018-01-31T09:13:39.722Z</pubTime>
-        
-        <tag>Objective-C</tag>
-         
-        <tag>runtime</tag>
-         
-         
-           
-             
-              <breadCrumb title="runtime" url="http://grackanil.top/categories/runtime/"/>
           
         </display>
     </data>

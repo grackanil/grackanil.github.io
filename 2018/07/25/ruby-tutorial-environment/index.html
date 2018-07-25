@@ -106,7 +106,7 @@
 
 
 
-  <meta name="keywords" content="static site,comparision," />
+  <meta name="keywords" content="tutorial,Ruby," />
 
 
 
@@ -119,20 +119,20 @@
 
 
 
-<meta name="description" content="简要罗列静态网站托管平台。">
-<meta name="keywords" content="static site,comparision">
+<meta name="description" content="Ruby —— 有趣的哲学。">
+<meta name="keywords" content="tutorial,Ruby">
 <meta property="og:type" content="article">
-<meta property="og:title" content="静态网站托管服务平台">
-<meta property="og:url" content="http://grackanil.top/2018/01/03/static-site-hosting-service/index.html">
+<meta property="og:title" content="Ruby 札记 - 浅谈和配置 Ruby">
+<meta property="og:url" content="http://grackanil.top/2018/07/25/ruby-tutorial-environment/index.html">
 <meta property="og:site_name" content="Grac Kanil">
-<meta property="og:description" content="简要罗列静态网站托管平台。">
+<meta property="og:description" content="Ruby —— 有趣的哲学。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/hexo_Just%20magic.jpg">
-<meta property="og:updated_time" content="2018-01-03T13:27:45.180Z">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/hexo_Fables.jpg">
+<meta property="og:updated_time" content="2018-07-25T16:23:56.369Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="静态网站托管服务平台">
-<meta name="twitter:description" content="简要罗列静态网站托管平台。">
-<meta name="twitter:image" content="http://oxwk2uou0.bkt.clouddn.com/hexo_Just%20magic.jpg">
+<meta name="twitter:title" content="Ruby 札记 - 浅谈和配置 Ruby">
+<meta name="twitter:description" content="Ruby —— 有趣的哲学。">
+<meta name="twitter:image" content="http://oxwk2uou0.bkt.clouddn.com/hexo_Fables.jpg">
 
 
 
@@ -162,13 +162,13 @@
 
 
 
-  <link rel="canonical" href="http://grackanil.top/2018/01/03/static-site-hosting-service/"/>
+  <link rel="canonical" href="http://grackanil.top/2018/07/25/ruby-tutorial-environment/"/>
 
 
 
 
 
-  <title>静态网站托管服务平台 | Grac Kanil</title>
+  <title>Ruby 札记 - 浅谈和配置 Ruby | Grac Kanil</title>
   
 
 
@@ -305,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://grackanil.top/2018/01/03/static-site-hosting-service/">
+    <link itemprop="mainEntityOfPage" href="http://grackanil.top/2018/07/25/ruby-tutorial-environment/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Grac Kanil">
@@ -322,7 +322,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">静态网站托管服务平台</h2>
+          <h2 class="post-title" itemprop="name headline">Ruby 札记 - 浅谈和配置 Ruby</h2>
         
 
         <div class="post-meta">
@@ -334,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-03T11:55:37+08:00">
-                2018-01-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-25T13:46:37+08:00">
+                2018-07-25
               </time>
             
 
@@ -350,12 +350,34 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-01-03T21:27:45+08:00">
-                2018-01-03
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-26T00:23:56+08:00">
+                2018-07-26
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby-札记/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby 札记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -387,7 +409,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  819
+                  943
                 </span>
               
 
@@ -412,66 +434,61 @@
       
 
       
-        <p><img src="http://oxwk2uou0.bkt.clouddn.com/hexo_Just%20magic.jpg" class="full-image"><br>简要罗列静态网站托管平台。<br><a id="more"></a></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近使用<code>Hexo</code>和<code>GitHub Pages</code>搭建个人静态主页，发现一些问题，遂做一个横向方案比较，了解一下具体的异同。有很多平台没有亲自实践，所以说明仅供记录参考，细节有待挖掘和更新。同时，如果您有其他推荐的方案，欢迎评论分享，持续更新：)</p>
-<h2 id="GitHub-Pages-被设计为直接来源于GitHub仓库的个人、组织或项目主页。"><a href="#GitHub-Pages-被设计为直接来源于GitHub仓库的个人、组织或项目主页。" class="headerlink" title="GitHub Pages 被设计为直接来源于GitHub仓库的个人、组织或项目主页。"></a><a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> 被设计为直接来源于<code>GitHub</code>仓库的个人、组织或项目主页。</h2><ul>
-<li>提供静态网站托管服务</li>
-<li>不支持服务端代码，比如 PHP、Ruby 或 Python</li>
-<li>GitHub Pages 提供的域名可以支持 HTTPS 访问</li>
-<li>可以配置自定义的域名，但是无法给自定义的域名配置 SSL ，<code>HTTPS is not supported for GitHub Pages using custom domains.</code></li>
-<li>响应速度还是有点慢</li>
-<li>网站仓库小于<code>1GB</code>，带宽限制 <code>100GB/每月</code>，构建限制<code>10次/每小时</code></li>
-</ul>
-<h2 id="Netlify"><a href="#Netlify" class="headerlink" title="Netlify"></a><a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a></h2><ul>
-<li>不支持后台逻辑运算能力的网页</li>
-<li>如果要部署 Hexo 大体思路是，通过 CLI (命令行界面)将 md 渲染为静态网站，然后通过 git 部署到 Git 平台，然后使用 Netlify 的 webhook 自动抓取部署</li>
-<li>具有全球CDN、持续部署、一键HTTPS等优势</li>
-<li>能通过客户端 JS 与可重用 API 可以带来动态功能，炫酷。</li>
-<li>可以使用 Hugo 静态网站生成器和 Hetlify 网站自动化系统配合，以解决 Github Pages 的不支持 HTTPS 和 响应慢的问题</li>
-</ul>
-<h2 id="Coding-Pages-由国内-Coding-提供"><a href="#Coding-Pages-由国内-Coding-提供" class="headerlink" title="Coding Pages 由国内 Coding 提供"></a><a href="https://coding.net/pages/" target="_blank" rel="noopener">Coding Pages</a> 由国内 Coding 提供</h2><ul>
-<li>访问速度友好</li>
-<li>可以做 GitHub Pages 和 Coding Pages 同时部署 Hexo，然后通过域名 DNS 解析，国外访问 GitHub Pages ，国内 访问 Coding Pages， 以优化访问速度</li>
-<li>可以免费绑定多个自定义域名</li>
-<li>自定义域名可以享有免费 SSL 证书，全站支持 HTTPS 协议</li>
-<li>更新代码库就可以自动部署。服务器稳定，香港服务器国外支持也友好</li>
-<li>新增动态页面部署</li>
-<li>有一个小问题是，网站首页如果不放置官方『Hosted by Coding Pages』的链接，会系统添加中间『Hosted by Coding Pages』页面。</li>
-</ul>
-<h2 id="GitLab-Pages-是由-GitLab-提供，旨在为-GitLab-工程、个人、groups-创建网站。"><a href="#GitLab-Pages-是由-GitLab-提供，旨在为-GitLab-工程、个人、groups-创建网站。" class="headerlink" title="GitLab Pages 是由 GitLab 提供，旨在为 GitLab 工程、个人、groups 创建网站。"></a><a href="https://about.gitlab.com/features/pages/" target="_blank" rel="noopener">GitLab Pages</a> 是由 GitLab 提供，旨在为 GitLab 工程、个人、groups 创建网站。</h2><ul>
-<li>可以使用任何静态网站生成器，如 Jekyll、Middleman、Hexo、Hugo、Pelican等</li>
-<li>可以配置自定义域名 HTTPS，需要的是上传证书</li>
-</ul>
-<h2 id="Now"><a href="#Now" class="headerlink" title="Now"></a><a href="https://zeit.co/now" target="_blank" rel="noopener">Now</a></h2><ul>
-<li>不仅支持静态网站托管，也支持 JavaScript(Node.js) 或者 Docker 驱动的网站，</li>
-<li>可以使用 CLI 或者链接 Git 仓库</li>
-<li>支持自定义域名，开启 HTTPS</li>
-<li>传输基于 HTTP/2</li>
-<li>不需要安装 Git 等源代码控制工具，不需要设置 keys 或者 tokens</li>
-<li>实时部署。</li>
-</ul>
-<h2 id="Firebase-Hosting"><a href="#Firebase-Hosting" class="headerlink" title="Firebase Hosting"></a><a href="https://www.firebase.com/docs/hosting/" target="_blank" rel="noopener">Firebase Hosting</a></h2><ul>
-<li>只能 CLI</li>
-<li>支持自定义域名并支持开启 HTTPS</li>
-<li>支持重定向和重写。</li>
-</ul>
-<h2 id="Bitbucket-Cloud"><a href="#Bitbucket-Cloud" class="headerlink" title="Bitbucket Cloud"></a><a href="https://confluence.atlassian.com/bitbucket/publishing-a-website-on-bitbucket-cloud-221449776.html" target="_blank" rel="noopener">Bitbucket Cloud</a></h2><ul>
-<li>必须要通过 HTTPS 访问</li>
-<li>不能自定义域名</li>
-<li>所有项目的静态网站代码都只能放在专门的站点仓库里。</li>
-<li>页面缓存 15 分钟，意味着改变不会立即可见。</li>
-</ul>
-<h2 id="aerobatic"><a href="#aerobatic" class="headerlink" title="aerobatic"></a><a href="https://www.aerobatic.com/" target="_blank" rel="noopener">aerobatic</a></h2><ul>
-<li>可以支持 CLI 上传代码</li>
-<li>自定义域名需要收费。</li>
-</ul>
-<h2 id="surge"><a href="#surge" class="headerlink" title="surge"></a><a href="https://surge.sh/" target="_blank" rel="noopener">surge</a></h2><ul>
-<li>只支持 CLI</li>
-<li>支持自定义域名，开启 SSL 是需要收费，同时需要自己上传证书</li>
-</ul>
+        <!-- <div class="note success"></div> –&gt;
+<!-- default
+primary
+success
+info
+warning
+danger -->
+<p><img src="http://oxwk2uou0.bkt.clouddn.com/hexo_Fables.jpg" class="full-image"><br>Ruby —— 有趣的哲学。<br><a id="more"></a></p>
 <blockquote>
-<p>持续更新…</p>
+<p>What,Why,Where,How? 你或许会问这些问题，接下来，浅谈些许拙见。</p>
 </blockquote>
+<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>大学时，在一个分享会上，听一个科大的准研究生说，“如何理解计算机基础？首先从思维方式上就要转变，站在计算机的角度去思考问题。”似乎也不无道理。我想，工程师大多也都是这个思维，这样机器就能运行的更快，运行效率更高…</p>
+<p>然而，松本行弘先生(Matz)设计 Ruby 语言第一要义，就是 <code>减少编程时候的不必要的琐碎时间，令编写程序的人高兴。</code> </p>
+<p>Matz 认为 Ruby &gt; (Smalltalk + Perl) / 2，表示Ruby是一个语法像 Smalltalk 一样完全面向对象、脚本运行、又有 Perl 强大的文字处理功能的编程语言。说到 Smalltalk ，不得不提一下 Objective-C， 它最大的特色就是承自 Smalltalk 的消息传递模型（message passing），该机制与今日 C++ 式之主流风格差异甚大。所以也提高了我探寻的兴趣 ；）</p>
+<h2 id="0x01-Ruby-是什么"><a href="#0x01-Ruby-是什么" class="headerlink" title="0x01 Ruby 是什么"></a>0x01 Ruby 是什么</h2><p>Ruby 是一种面向对象、命令式、函数式、动态的通用编程语言。</p>
+<p>Ruby has been designed on the Principle of Least Surprise - Matz says “I wanted to minimize my frustration during programming, so I want to minimize my effort in programming. That was my primary goal in designing Ruby. I want to have fun in programming myself. After releasing Ruby and many people around the world got to know Ruby, they said they feel the way I feel. They came up with the phrase the principle of least surprise.”</p>
+<p>2001 年，Oreilly 对 Matz 的一个关于 Ruby 历史的<a href="https://www.oreilly.com/ideas" target="_blank" rel="noopener">采访</a>. Matz 的 “<a href="https://www.artima.com/intv/ruby.html" target="_blank" rel="noopener">The Philosophy of Ruby</a>“ 也值得学习。</p>
+<h2 id="0x02-为什么要学习-Ruby"><a href="#0x02-为什么要学习-Ruby" class="headerlink" title="0x02 为什么要学习 Ruby"></a>0x02 为什么要学习 Ruby</h2><p><code>有趣</code>。这是一个好的问题，但这也是一个大家都知道答案的问题。一千个读者就有一千个哈姆雷特，我想也类似于这个问题。我简单说一下我的原因，有些人会说，语言只是工具而已，不用学习那么多。希望大家辩证的思考这个观点，每一门语言，每一个设计，都有自己的原则，都有自己的思维方式，自己的哲学存在。学习锻炼自己，发人深省。每一个 iOS 开发者，对 Smalltalk 或多或少会有些情愫，Ruby 中也能看到它的影子，不免有些共鸣。</p>
+<h2 id="0x03-如何学习-Ruby"><a href="#0x03-如何学习-Ruby" class="headerlink" title="0x03 如何学习 Ruby"></a>0x03 如何学习 Ruby</h2><h3 id="一、下载-Ruby"><a href="#一、下载-Ruby" class="headerlink" title="一、下载 Ruby"></a>一、下载 Ruby</h3><p>for Windows，个人多一句，建议不使用 Windows 环境学习 Ruby，有两个原因，第一，Ruby 对 Unix 环境的需求非常高；第二，Ruby 在 Windows 环境下面执行效率低。或多或少会有些弯路。</p>
+<ul>
+<li>下载 <a href="https://rubyinstaller.org/" target="_blank" rel="noopener">Ruby for Windows</a></li>
+<li>双击同意协议</li>
+<li>配置环境变量</li>
+</ul>
+<p>for UNIX-like，首先不建议使用系统预装的，可能比较过时了，另外，推荐使用 <code>rbenv</code>、 <code>RVM</code> 或者 <code>chruby</code> 管理 Ruby 环境。</p>
+<ul>
+<li>先安装 <a href="http://developer.apple.com/xcode/" target="_blank" rel="noopener">Xcode</a> 开发工具，它将帮你安装好 Unix 环境需要的开发包</li>
+<li>然后安装 <a href="http://brew.sh" target="_blank" rel="noopener">Homebrew</a></li>
+<li><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></li>
+<li>如果需要安装 Rails，安装 <code>brew install libxml2 libxslt libiconv</code> 必须的依赖第三库</li>
+<li><p>安装 RVM</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3</span><br><span class="line">$ -sSL https://get.rvm.io | bash -s stable</span><br><span class="line">如果失败，尝试</span><br><span class="line">$ curl -L https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable</span><br><span class="line">$ source ~/.rvm/scripts/rvm</span><br><span class="line">$ echo &quot;ruby_url=https://cache.ruby-china.org/pub/ruby&quot; &gt; ~/.rvm/user/db</span><br><span class="line">$ rvm -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>RVM 安装 Ruby</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ rvm requirements</span><br><span class="line">$ rvm install 2.4.0</span><br><span class="line">$ rvm use 2.4.0 --default</span><br><span class="line">$ ruby -v</span><br><span class="line">$ gem -v</span><br><span class="line">$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 Bundler</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gem install bundler</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 Rails</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ gem install rails</span><br><span class="line">$ rails -v</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="二、下载一个编辑器"><a href="#二、下载一个编辑器" class="headerlink" title="二、下载一个编辑器"></a>二、下载一个编辑器</h3><ul>
+<li>Visual Studio Code</li>
+<li>Atom</li>
+<li>Sublime Text</li>
+<li>Vim 或 Emacs</li>
+</ul>
+<h2 id="0x04-在哪儿学习-Ruby"><a href="#0x04-在哪儿学习-Ruby" class="headerlink" title="0x04 在哪儿学习 Ruby"></a>0x04 在哪儿学习 Ruby</h2><ul>
+<li><a href="http://rubylearning.com/satishtalim/tutorial.html" target="_blank" rel="noopener">rubylearning</a></li>
+<li><a href="https://www.ruby-lang.org/zh_cn/" target="_blank" rel="noopener">ruby lang</a></li>
+<li><a href="https://ruby-china.org/" target="_blank" rel="noopener">ruby china 社区</a></li>
+<li>持续学习更新收集中…（PS:此处支持布道者推荐）</li>
+</ul>
 
       
     </div>
@@ -492,7 +509,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://grackanil.top/2018/01/03/static-site-hosting-service/" title="静态网站托管服务平台">http://grackanil.top/2018/01/03/static-site-hosting-service/</a>
+    <a href="http://grackanil.top/2018/07/25/ruby-tutorial-environment/" title="Ruby 札记 - 浅谈和配置 Ruby">http://grackanil.top/2018/07/25/ruby-tutorial-environment/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -507,9 +524,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/static-site/" rel="tag"><i class="fa fa-tag"></i> static site</a>
+            <a href="/tags/tutorial/" rel="tag"><i class="fa fa-tag"></i> tutorial</a>
           
-            <a href="/tags/comparision/" rel="tag"><i class="fa fa-tag"></i> comparision</a>
+            <a href="/tags/Ruby/" rel="tag"><i class="fa fa-tag"></i> Ruby</a>
           
         </div>
       
@@ -522,8 +539,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/29/hexo-tutorial/" rel="next" title="Hexo Tutorial - 基本搭建和配置">
-                <i class="fa fa-chevron-left"></i> Hexo Tutorial - 基本搭建和配置
+              <a href="/2018/01/31/runtime-load/" rel="next" title="NSObject +(void)load 和+(void)initialize 方法的理解">
+                <i class="fa fa-chevron-left"></i> NSObject +(void)load 和+(void)initialize 方法的理解
               </a>
             
           </div>
@@ -531,10 +548,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/03/hexo-theme-tutorial/" rel="prev" title="Hexo Tutorial - NexT 主题配置和第三方服务">
-                Hexo Tutorial - NexT 主题配置和第三方服务 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -708,7 +721,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub-Pages-被设计为直接来源于GitHub仓库的个人、组织或项目主页。"><span class="nav-number">2.</span> <span class="nav-text">GitHub Pages 被设计为直接来源于GitHub仓库的个人、组织或项目主页。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Netlify"><span class="nav-number">3.</span> <span class="nav-text">Netlify</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Coding-Pages-由国内-Coding-提供"><span class="nav-number">4.</span> <span class="nav-text">Coding Pages 由国内 Coding 提供</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitLab-Pages-是由-GitLab-提供，旨在为-GitLab-工程、个人、groups-创建网站。"><span class="nav-number">5.</span> <span class="nav-text">GitLab Pages 是由 GitLab 提供，旨在为 GitLab 工程、个人、groups 创建网站。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Now"><span class="nav-number">6.</span> <span class="nav-text">Now</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Firebase-Hosting"><span class="nav-number">7.</span> <span class="nav-text">Firebase Hosting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bitbucket-Cloud"><span class="nav-number">8.</span> <span class="nav-text">Bitbucket Cloud</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aerobatic"><span class="nav-number">9.</span> <span class="nav-text">aerobatic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#surge"><span class="nav-number">10.</span> <span class="nav-text">surge</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-前言"><span class="nav-number">1.</span> <span class="nav-text">0x00 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-Ruby-是什么"><span class="nav-number">2.</span> <span class="nav-text">0x01 Ruby 是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-为什么要学习-Ruby"><span class="nav-number">3.</span> <span class="nav-text">0x02 为什么要学习 Ruby</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-如何学习-Ruby"><span class="nav-number">4.</span> <span class="nav-text">0x03 如何学习 Ruby</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、下载-Ruby"><span class="nav-number">4.1.</span> <span class="nav-text">一、下载 Ruby</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、下载一个编辑器"><span class="nav-number">4.2.</span> <span class="nav-text">二、下载一个编辑器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-在哪儿学习-Ruby"><span class="nav-number">5.</span> <span class="nav-text">0x04 在哪儿学习 Ruby</span></a></li></ol></div>
             
 
           </div>
