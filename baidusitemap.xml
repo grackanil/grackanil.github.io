@@ -4,57 +4,16 @@
 
     
   <url>
-    <loc>http://grackanil.top/2018/01/03/static-site-hosting-service/</loc>
-    <lastmod>2018-07-26T16:32:11.806Z</lastmod>
+    <loc>http://grackanil.top/2018/07/26/ruby-glance/</loc>
+    <lastmod>2018-07-27T06:23:05.819Z</lastmod>
     <data>
         <display>
-        <title>静态网站托管服务平台</title>
-        <pubTime>2018-01-03T03:55:37.000Z</pubTime>
+        <title>Ruby 札记 - 纵览优雅的 Ruby</title>
+        <pubTime>2018-07-25T16:43:54.453Z</pubTime>
         
-        <tag>static site</tag>
-         
-        <tag>comparision</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://grackanil.top/2018/01/31/runtime-load/</loc>
-    <lastmod>2018-07-26T16:32:10.783Z</lastmod>
-    <data>
-        <display>
-        <title>NSObject +(void)load 和+(void)initialize 方法的理解</title>
-        <pubTime>2018-01-31T09:13:39.722Z</pubTime>
-        
-        <tag>Objective-C</tag>
-         
-        <tag>runtime</tag>
-         
-         
-           
-             
-              <breadCrumb title="runtime" url="http://grackanil.top/categories/runtime/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://grackanil.top/2018/07/25/ruby-tutorial-environment/</loc>
-    <lastmod>2018-07-26T16:32:09.257Z</lastmod>
-    <data>
-        <display>
-        <title>Ruby 札记 - 浅谈和配置 Ruby</title>
-        <pubTime>2018-07-25T05:46:37.867Z</pubTime>
-        
-        <tag>Ruby</tag>
-         
         <tag>tutorial</tag>
+         
+        <tag>Ruby</tag>
          
          
            
@@ -68,7 +27,7 @@
     
   <url>
     <loc>http://grackanil.top/2018/01/03/hexo-theme-tutorial/</loc>
-    <lastmod>2018-07-26T16:32:06.673Z</lastmod>
+    <lastmod>2018-07-26T16:42:41.481Z</lastmod>
     <data>
         <display>
         <title>Hexo Tutorial - NexT 主题配置和第三方服务</title>
@@ -90,7 +49,7 @@
     
   <url>
     <loc>http://grackanil.top/2017/12/29/hexo-tutorial/</loc>
-    <lastmod>2018-07-26T16:32:05.424Z</lastmod>
+    <lastmod>2018-07-26T16:42:36.329Z</lastmod>
     <data>
         <display>
         <title>Hexo Tutorial - 基本搭建和配置</title>
@@ -105,6 +64,69 @@
              
               <breadCrumb title="tutorial" url="http://grackanil.top/categories/tutorial/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://grackanil.top/2018/07/25/ruby-tutorial-environment/</loc>
+    <lastmod>2018-07-26T16:42:34.253Z</lastmod>
+    <data>
+        <display>
+        <title>Ruby 札记 - 浅谈和配置 Ruby</title>
+        <pubTime>2018-07-25T05:46:37.867Z</pubTime>
+        
+        <tag>tutorial</tag>
+         
+        <tag>Ruby</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ruby 札记" url="http://grackanil.top/categories/Ruby-%E6%9C%AD%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://grackanil.top/2018/01/31/runtime-load/</loc>
+    <lastmod>2018-07-26T16:42:31.972Z</lastmod>
+    <data>
+        <display>
+        <title>NSObject +(void)load 和+(void)initialize 方法的理解</title>
+        <pubTime>2018-01-31T09:13:39.722Z</pubTime>
+        
+        <tag>Objective-C</tag>
+         
+        <tag>runtime</tag>
+         
+         
+           
+             
+              <breadCrumb title="runtime" url="http://grackanil.top/categories/runtime/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://grackanil.top/2018/01/03/static-site-hosting-service/</loc>
+    <lastmod>2018-07-26T16:42:24.662Z</lastmod>
+    <data>
+        <display>
+        <title>静态网站托管服务平台</title>
+        <pubTime>2018-01-03T03:55:37.000Z</pubTime>
+        
+        <tag>static site</tag>
+         
+        <tag>comparision</tag>
+         
+         
+           
         </display>
     </data>
     </url>
