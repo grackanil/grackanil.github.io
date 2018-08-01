@@ -4,6 +4,94 @@
 
     
   <url>
+    <loc>http://grackanil.top/2018/07/27/ruby-feature/</loc>
+    <lastmod>2018-08-01T13:14:37.829Z</lastmod>
+    <data>
+        <display>
+        <title>Ruby 札记 - 浅尝 Ruby 特性</title>
+        <pubTime>2018-07-27T14:48:58.894Z</pubTime>
+        
+        <tag>Tutorial</tag>
+         
+        <tag>Ruby</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ruby 札记" url="http://grackanil.top/categories/Ruby-%E6%9C%AD%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://grackanil.top/2018/07/25/ruby-tutorial-environment/</loc>
+    <lastmod>2018-07-30T16:10:54.441Z</lastmod>
+    <data>
+        <display>
+        <title>Ruby 札记 - 浅谈和配置 Ruby</title>
+        <pubTime>2018-07-25T05:46:37.867Z</pubTime>
+        
+        <tag>Tutorial</tag>
+         
+        <tag>Ruby</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ruby 札记" url="http://grackanil.top/categories/Ruby-%E6%9C%AD%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://grackanil.top/2018/07/26/ruby-glance/</loc>
+    <lastmod>2018-07-27T15:33:23.576Z</lastmod>
+    <data>
+        <display>
+        <title>Ruby 札记 - 纵览优雅的 Ruby</title>
+        <pubTime>2018-07-25T16:43:54.453Z</pubTime>
+        
+        <tag>Tutorial</tag>
+         
+        <tag>Ruby</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ruby 札记" url="http://grackanil.top/categories/Ruby-%E6%9C%AD%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://grackanil.top/2018/01/31/runtime-load/</loc>
+    <lastmod>2018-07-27T15:33:14.643Z</lastmod>
+    <data>
+        <display>
+        <title>NSObject +(void)load 和+(void)initialize 方法的理解</title>
+        <pubTime>2018-01-31T09:13:39.722Z</pubTime>
+        
+        <tag>Objective-C</tag>
+         
+        <tag>Runtime</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS" url="http://grackanil.top/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://grackanil.top/2018/01/03/static-site-hosting-service/</loc>
     <lastmod>2018-07-27T15:30:58.919Z</lastmod>
     <data>
@@ -58,72 +146,6 @@
            
              
               <breadCrumb title="兜" url="http://grackanil.top/categories/%E5%85%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://grackanil.top/2018/07/26/ruby-glance/</loc>
-    <lastmod>2018-07-27T15:29:47.889Z</lastmod>
-    <data>
-        <display>
-        <title>Ruby 札记 - 纵览优雅的 Ruby</title>
-        <pubTime>2018-07-25T16:43:54.453Z</pubTime>
-        
-        <tag>tutorial</tag>
-         
-        <tag>Ruby</tag>
-         
-         
-           
-             
-              <breadCrumb title="Ruby 札记" url="http://grackanil.top/categories/Ruby-%E6%9C%AD%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://grackanil.top/2018/07/25/ruby-tutorial-environment/</loc>
-    <lastmod>2018-07-27T15:29:38.987Z</lastmod>
-    <data>
-        <display>
-        <title>Ruby 札记 - 浅谈和配置 Ruby</title>
-        <pubTime>2018-07-25T05:46:37.867Z</pubTime>
-        
-        <tag>Tutorial</tag>
-         
-        <tag>Ruby</tag>
-         
-         
-           
-             
-              <breadCrumb title="Ruby 札记" url="http://grackanil.top/categories/Ruby-%E6%9C%AD%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://grackanil.top/2018/01/31/runtime-load/</loc>
-    <lastmod>2018-07-27T15:29:27.922Z</lastmod>
-    <data>
-        <display>
-        <title>NSObject +(void)load 和+(void)initialize 方法的理解</title>
-        <pubTime>2018-01-31T09:13:39.722Z</pubTime>
-        
-        <tag>Objective-C</tag>
-         
-        <tag>runtime</tag>
-         
-         
-           
-             
-              <breadCrumb title="iOS" url="http://grackanil.top/categories/iOS/"/>
           
         </display>
     </data>

@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|Comic Sans MS:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Tutorial,Ruby," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Grac Kanil" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="经过粗略的看 Ruby 相关资源，看到了很多相似或相异却熟悉的点滴，还谈不上深刻体验，只能算记录。仍需用心探索，决定高层建筑需要夯实基础，理解原理，体会设计。 前言分享两个有趣的链接TryRuby：顾名思义，试试先。Ruby.new：好看的皮囊千篇一律，有趣的灵魂万里挑一。 迭代器先不厌其烦的记录下基础知识，闲话少叙。谈及迭代器（iteration），少不了谈到相似结构——循环（looping）。">
+<meta name="keywords" content="Tutorial,Ruby">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ruby 札记 - 浅尝 Ruby 特性">
+<meta property="og:url" content="http://grackanil.top/2018/07/27/ruby-feature/index.html">
+<meta property="og:site_name" content="Grac Kanil">
+<meta property="og:description" content="经过粗略的看 Ruby 相关资源，看到了很多相似或相异却熟悉的点滴，还谈不上深刻体验，只能算记录。仍需用心探索，决定高层建筑需要夯实基础，理解原理，体会设计。 前言分享两个有趣的链接TryRuby：顾名思义，试试先。Ruby.new：好看的皮囊千篇一律，有趣的灵魂万里挑一。 迭代器先不厌其烦的记录下基础知识，闲话少叙。谈及迭代器（iteration），少不了谈到相似结构——循环（looping）。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-01T13:14:37.829Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ruby 札记 - 浅尝 Ruby 特性">
+<meta name="twitter:description" content="经过粗略的看 Ruby 相关资源，看到了很多相似或相异却熟悉的点滴，还谈不上深刻体验，只能算记录。仍需用心探索，决定高层建筑需要夯实基础，理解原理，体会设计。 前言分享两个有趣的链接TryRuby：顾名思义，试试先。Ruby.new：好看的皮囊千篇一律，有趣的灵魂万里挑一。 迭代器先不厌其烦的记录下基础知识，闲话少叙。谈及迭代器（iteration），少不了谈到相似结构——循环（looping）。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://grackanil.top/2018/07/27/ruby-feature/"/>
+
+
+
+
+
+  <title>Ruby 札记 - 浅尝 Ruby 特性 | Grac Kanil</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/grackanil" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#3B6D51; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Grac Kanil</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">「以梦为马，不负韶华。」</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://grackanil.top/2018/07/27/ruby-feature/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Grac Kanil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Grac Kanil">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Ruby 札记 - 浅尝 Ruby 特性</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T22:48:58+08:00">
+                2018-07-27
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-01T21:14:37+08:00">
+                2018-08-01
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby-札记/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby 札记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+                  <i class="fa fa-tripadvisor"></i>
+            </span>
+            <span class="post-meta-item-text">阅读次数</span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,331
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>经过粗略的看 Ruby 相关资源，看到了很多相似或相异却熟悉的点滴，还谈不上深刻体验，只能算记录。仍需用心探索，决定高层建筑需要夯实基础，理解原理，体会设计。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>分享两个有趣的链接<br><a href="https://ruby.github.io/TryRuby/" target="_blank" rel="noopener">TryRuby</a>：顾名思义，试试先。<br><a href="http://saito.im/slide/ruby-new.html" target="_blank" rel="noopener">Ruby.new</a>：好看的皮囊千篇一律，有趣的灵魂万里挑一。</p>
+<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><p>先不厌其烦的记录下基础知识，闲话少叙。谈及迭代器（iteration），少不了谈到相似结构——循环（looping）。循环简要的说，是重复执行一段程序直到一个明确条件。迭代器是操作一个集合对象，如 Array 等，让集合每一个元素执行。<br>看看执行一个简单的迭代器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7.times do</span><br><span class="line">  puts &quot;Hello Iteration.&quot;</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>输入指定条件，才会停止的循环<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">input = &quot;&quot;</span><br><span class="line">while input != &quot;quit&quot;</span><br><span class="line">  puts &quot;ha,#&#123;input&#125;&quot;</span><br><span class="line">  input = gets.chomp</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>一个使用 <code>#each</code> 迭代器的例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">colors = [&quot;Yellow&quot;, &quot;Red&quot;, &quot;Black&quot;]</span><br><span class="line">colors.each do |color| #block 开始</span><br><span class="line">  puts &quot;#&#123;color&#125;&quot; #block体</span><br><span class="line">end #block 结束</span><br></pre></td></tr></table></figure></p>
+<p>输出如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">?&gt; colors = [&quot;Yellow&quot;, &quot;Red&quot;, &quot;Black&quot;]</span><br><span class="line">=&gt; [&quot;Yellow&quot;, &quot;Red&quot;, &quot;Black&quot;]</span><br><span class="line">&gt;&gt; colors.each do |color|</span><br><span class="line">?&gt;   puts &quot;#&#123;color&#125;&quot;</span><br><span class="line">&gt;&gt; end</span><br><span class="line">Yellow</span><br><span class="line">Red</span><br><span class="line">Black</span><br><span class="line">=&gt; [&quot;Yellow&quot;, &quot;Red&quot;, &quot;Black&quot;]</span><br></pre></td></tr></table></figure></p>
+<p>说到 <code>iterator</code> ，肯定和 <code>block</code> 强相关， 让我们走进 <code>block</code> 看看一些概念。</p>
+<p>什么是<code>块（block）</code>？<br>一块在括号<code>{}</code>内部代码叫块（block），或者<code>do</code> / <code>end</code> 之间的代码块，块（block）使 <code>ruby</code> 更加特殊、强大、受欢迎。</p>
+<p>什么是 <code>| |</code>?<br>被称为管道，调用迭代器 #each 时，管道内的变量充当传递给块的参数，传递到块中的每个元素将等于管道内的变量名称。为集合中的每个元素调用或运行块中的代码一次。<code>#each</code>方法每次取集合中的一个元素，并将其传递至块中，每个元素赋值给管道中的变量。</p>
+<p><code>{ }</code> 语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">colors = [&quot;Yellow&quot;, &quot;Red&quot;, &quot;Black&quot;]</span><br><span class="line">colors.each &#123;|color| puts &quot;#&#123;color&#125;&quot; &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="一切表达方法皆有值"><a href="#一切表达方法皆有值" class="headerlink" title="一切表达方法皆有值"></a>一切表达方法皆有值</h2><p>任何表达式都有返回值，即使是<code>nil</code>，如下代码也有（有没有觉得不可思议）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x = 10</span><br><span class="line">y = 11</span><br><span class="line">z = if x &lt; y</span><br><span class="line">      true</span><br><span class="line">    else</span><br><span class="line">      false</span><br><span class="line">    end</span><br><span class="line">z # =&gt; true</span><br></pre></td></tr></table></figure></p>
+<h2 id="符号不是轻量的字符串"><a href="#符号不是轻量的字符串" class="headerlink" title="符号不是轻量的字符串"></a>符号不是轻量的字符串</h2><p>符号最好的描述是身份证。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; :grackanil.object_id</span><br><span class="line">=&gt; 1145628</span><br><span class="line">&gt;&gt; :grackanil.object_id</span><br><span class="line">=&gt; 1145628</span><br><span class="line"></span><br><span class="line">?&gt; &quot;grackanil&quot;.object_id</span><br><span class="line">=&gt; 70162817382840</span><br><span class="line">&gt;&gt; &quot;grackanil&quot;.object_id</span><br><span class="line">=&gt; 70162817360420</span><br></pre></td></tr></table></figure></p>
+<p>以上代码说明什么？说明当符号在使用过一次后，任何相同字符的符号都会在内存中指向同一个对象地址，也即是 object_id 相同。字符串就不同，每次都会分配新的空间，即 object_id 不同。</p>
+<h2 id="一切皆是对象"><a href="#一切皆是对象" class="headerlink" title="一切皆是对象"></a>一切皆是对象</h2><p>丝毫不夸张，整型都是对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">?&gt; 1.class</span><br><span class="line">=&gt; Fixnum</span><br></pre></td></tr></table></figure></p>
+<h2 id="可以改变的常量"><a href="#可以改变的常量" class="headerlink" title="可以改变的常量"></a>可以改变的常量</h2><p>只会有警告，但不会终止执行，但还是不建议修改。</p>
+<h2 id="命名约定"><a href="#命名约定" class="headerlink" title="命名约定"></a>命名约定</h2><p>只是约定。</p>
+<ul>
+<li>局部变量以英文字母或者 _ 开头。</li>
+<li>全局变量以 $ 开头。</li>
+<li>实例变量以 @ 开头。</li>
+<li>类变量以 @@ 开头</li>
+</ul>
+<h2 id="关键值参数"><a href="#关键值参数" class="headerlink" title="关键值参数"></a>关键值参数</h2><p>从 Ruby 2.0 开始就有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def deliver(from: &quot;A&quot;, to: nil, via: &quot;mail&quot;)</span><br><span class="line">  &quot;Sending from #&#123;from&#125; to #&#123;to&#125; via #&#123;via&#125;.&quot;</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">deliver(to: &quot;B&quot;)</span><br><span class="line"># =&gt; &quot;Sending from A to B via mail.&quot;</span><br><span class="line">deliver(via: &quot;Pony Express&quot;, from: &quot;B&quot;, to: &quot;A&quot;)</span><br><span class="line"># =&gt; &quot;Sending from B to A via Pony Express.&quot;</span><br></pre></td></tr></table></figure></p>
+<h2 id="真值"><a href="#真值" class="headerlink" title="真值"></a>真值</h2><p>Ruby 把任何不是 nil 和 false 的值当作真值。和其他语言不同，可以说差异很大，其他语言，如 Python、C 等，都是会认为 0 和一些其他的值， 比如空的列表，会被当作假值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Ruby 中</span><br><span class="line">if 0</span><br><span class="line">  puts &quot;0 为真&quot;</span><br><span class="line">else</span><br><span class="line">  puts &quot;0 为假&quot;</span><br><span class="line">end</span><br><span class="line"># puts &quot;0 为真&quot;</span><br></pre></td></tr></table></figure></p>
+<h2 id="权限控制声明"><a href="#权限控制声明" class="headerlink" title="权限控制声明"></a>权限控制声明</h2><p>权限声明会一直应用到类声明底部或者直到另外一个权限声明开始起作用。</p>
+<ul>
+<li>public 是公开的。</li>
+<li>private 表示只有非明确指定接收者允许调用。私有方法调用只允许 self 为接收者。</li>
+<li>protected 可以被类及子类的实例调用，同一个类的其他实例也可以调用。<br>另外，<code>public</code>、<code>private</code> 和 <code>protected</code> 都是方法，可以传参，如果传递一个符号作为参数，那符号所代表的函数就是指定的权限。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">?&gt; method(:public)</span><br><span class="line">=&gt; #&lt;Method: main.public&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="类是开放的"><a href="#类是开放的" class="headerlink" title="类是开放的"></a>类是开放的</h2><p>可以打开任何类，对它增加和修改。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Class Fixnum</span><br><span class="line">  def month</span><br><span class="line">    self * 30</span><br><span class="line">  end</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>1.month</p>
+<h2 id="以-？和-！结尾的方法"><a href="#以-？和-！结尾的方法" class="headerlink" title="以 ？和 ！结尾的方法"></a>以 ？和 ！结尾的方法</h2><p>首先，允许 ？和 ! 结尾。以问号结尾的方法表示返回布尔值，以感叹号结尾表示潜在“危险”方法，会修改<code>self</code>或参数。</p>
+<h2 id="Missing-方法"><a href="#Missing-方法" class="headerlink" title="Missing 方法"></a>Missing 方法</h2><p>会将不存在的方法名，作为参数传递给 <code>method_missing</code>，<code>method_missing</code> 默认会抛出一个 NameError 异常。根据需要可以，可以覆盖该方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def method_missing(id, *arguments)</span><br><span class="line">  puts &quot;调用了不存在的方法：#&#123;id&#125;。它的参数：#&#123;arguments.join(&quot;, &quot;)&#125;&quot;</span><br><span class="line">end</span><br><span class="line">1.sssss :a 2222</span><br><span class="line"># 调用了不存在的方法：sssss。它的参数：a, 2222</span><br></pre></td></tr></table></figure></p>
+<h2 id="操作符是语法糖"><a href="#操作符是语法糖" class="headerlink" title="操作符是语法糖"></a>操作符是语法糖</h2><p>大部分操作符仅仅是方法调用的语法糖，你可以覆盖。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">=&gt; #&lt;Method: main.public&gt;</span><br><span class="line">&gt;&gt; class Fixnum</span><br><span class="line">&gt;&gt;   def +(other)</span><br><span class="line">&gt;&gt;     self - other</span><br><span class="line">&gt;&gt;   end</span><br><span class="line">&gt;&gt; end</span><br><span class="line">=&gt; :+</span><br><span class="line">&gt;&gt;</span><br><span class="line">?&gt; 1 + 1</span><br><span class="line">=&gt; 0</span><br></pre></td></tr></table></figure></p>
+<p>当然，也有一些操作符。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=, .., ..., not, &amp;&amp;, and, ||, or, ::, +=, *=</span><br></pre></td></tr></table></figure></p>
+<h2 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h2><p>方法调用实际是消息传递，不是函数调用。将一条消息传递给另一个对象。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Grac Kanil
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://grackanil.top/2018/07/27/ruby-feature/" title="Ruby 札记 - 浅尝 Ruby 特性">http://grackanil.top/2018/07/27/ruby-feature/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Tutorial/" rel="tag"><i class="fa fa-tag"></i> Tutorial</a>
+          
+            <a href="/tags/Ruby/" rel="tag"><i class="fa fa-tag"></i> Ruby</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/26/ruby-glance/" rel="next" title="Ruby 札记 - 纵览优雅的 Ruby">
+                <i class="fa fa-chevron-left"></i> Ruby 札记 - 纵览优雅的 Ruby
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Grac Kanil" />
+            
+              <p class="site-author-name" itemprop="name">Grac Kanil</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/grackanil" target="_blank" title="GitHub">
+                      GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/grackanil" target="_blank" title="Twitter">
+                      Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="ruanyifeng" target="_blank">ruanyifeng</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器"><span class="nav-number">2.</span> <span class="nav-text">迭代器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一切表达方法皆有值"><span class="nav-number">3.</span> <span class="nav-text">一切表达方法皆有值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#符号不是轻量的字符串"><span class="nav-number">4.</span> <span class="nav-text">符号不是轻量的字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一切皆是对象"><span class="nav-number">5.</span> <span class="nav-text">一切皆是对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可以改变的常量"><span class="nav-number">6.</span> <span class="nav-text">可以改变的常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名约定"><span class="nav-number">7.</span> <span class="nav-text">命名约定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键值参数"><span class="nav-number">8.</span> <span class="nav-text">关键值参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#真值"><span class="nav-number">9.</span> <span class="nav-text">真值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权限控制声明"><span class="nav-number">10.</span> <span class="nav-text">权限控制声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类是开放的"><span class="nav-number">11.</span> <span class="nav-text">类是开放的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以-？和-！结尾的方法"><span class="nav-number">12.</span> <span class="nav-text">以 ？和 ！结尾的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Missing-方法"><span class="nav-number">13.</span> <span class="nav-text">Missing 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作符是语法糖"><span class="nav-number">14.</span> <span class="nav-text">操作符是语法糖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#消息传递"><span class="nav-number">15.</span> <span class="nav-text">消息传递</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Grac Kanil</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">总字数&#58;</span>
+    
+    <span title="总字数">12.2k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'jaVf0MPQaJTV41ynO56FSKLv-gzGzoHsz',
+        appKey: 'jGHDKGiFDMJiExs4DdrjtwTG',
+        placeholder: '学习交流，欢迎指正~',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
