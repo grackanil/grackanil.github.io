@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[iOS 真机中设置 Slow Animations]]></title>
+    <url>%2F2018%2F08%2F29%2Fios-slow-animation%2F</url>
+    <content type="text"><![CDATA[分享个 XCode LLDB 调试小技巧 前言在 iOS 开发中，动画也是一个很重要的组成部分。你会不会因为动画需要有灵性，苦于一点点调试参数，但又看不清楚细节？会不会遇到 App 中某些色块一闪而过？会不会突然闪屏不知道为什么？ 当然，不可避免。 可能会用到的调试技巧或许有些人，早已知道，模拟器中，苹果提供了 Slow Animations 选项。也或许有些人还不知道，或者未尝试使用过。 模拟器开启 Slow Animations打开模拟器，菜单栏 &gt; Debug &gt; Show Animations 真机开启 Slow Animations 可以使用 LLDB 实现 Slow Animations1) 点击 Debug 区域的 Pause program execution2) 点击 Debug 区域的 LLDB 中输入命令 p [(CALayer *)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] layer] setSpeed:.1f]另外，Swift 使用 p UIApplication.sharedApplication().windows.first?.layer.speed = 0.1 即可。3) 点击 Debug 区域的 Continue program execution 可以代码形式实现 Slow AnimationsdidFinishLaunchingWithOptions 中设置 self.window.layer.speed = .1f;]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>LLDB</tag>
+        <tag>Debug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ruby 札记 - Ruby 集合家族之哈希（Hash）]]></title>
     <url>%2F2018%2F08%2F20%2Fruby-collection-another%2F</url>
     <content type="text"><![CDATA[前言说完数组，就知道下一个肯定是哈希，在 Objective-C 里的体现是字典（NSDictionary）。为什么这种集合很受欢迎呢？这要从哈希算法说起，简单的说，hash 能以 O（1）的复杂度将内容映射到位置。Hash 算法的原理和基础概念，不乏好文，此处不赘述。后面可以专门复习梳理下。 创建哈希12345678910111213?&gt; hash = &#123;&#125;=&gt; &#123;&#125;&gt;&gt; hash[&apos;1&apos;] = &quot;one&quot;=&gt; &quot;one&quot;?&gt; hash=&gt; &#123;&quot;1&quot;=&gt;&quot;one&quot;&#125;&gt;&gt;?&gt; h = Hash.new=&gt; &#123;&#125;&gt;&gt; h[&apos;2&apos;] = &quot;two&quot;=&gt; &quot;two&quot;&gt;&gt; h=&gt; &#123;&quot;2&quot;=&gt;&quot;two&quot;&#125; 可以用 =&gt; 初始化 hash，可以叫它哈希火箭🚀（调皮）1234567?&gt; h = &#123;?&gt; &apos;1&apos; =&gt; &quot;one&quot;,?&gt; &apos;2&apos; =&gt; &quot;two&quot;&gt;&gt; &#125;=&gt; &#123;&quot;1&quot;=&gt;&quot;one&quot;, &quot;2&quot;=&gt;&quot;two&quot;&#125;&gt;&gt; h=&gt; &#123;&quot;1&quot;=&gt;&quot;one&quot;, &quot;2&quot;=&gt;&quot;two&quot;&#125; 如果取没有 key 的值，返回 nil。当然这取决于你构造时有没有传默认值。1234567?&gt; h[&quot;3&quot;]=&gt; nil?&gt; h = Hash.new(0)=&gt; &#123;&#125;&gt;&gt; h[&apos;4&apos;]=&gt; 0 删除，简单的置值为 nil 不能删除。可以使用#delete方法12345678910111213141516?&gt; h = &#123;&apos;1&apos; =&gt; &quot;one&quot;, &apos;2&apos; =&gt; &quot;two&quot;&#125;=&gt; &#123;&quot;1&quot;=&gt;&quot;one&quot;, &quot;2&quot;=&gt;&quot;two&quot;&#125;&gt;&gt; h.size=&gt; 2&gt;&gt; h[&apos;1&apos;] = nil=&gt; nil&gt;&gt; h.size=&gt; 2&gt;&gt; h=&gt; &#123;&quot;1&quot;=&gt;nil, &quot;2&quot;=&gt;&quot;two&quot;&#125;&gt;&gt; h.delete(&apos;1&apos;)=&gt; nil&gt;&gt; h.size=&gt; 1&gt;&gt; h=&gt; &#123;&quot;2&quot;=&gt;&quot;two&quot;&#125; 也可以使用一些表示作为键值，也可以不使用 =&gt; 创建哈希（使用冒号，这和 Objective-C 很相似）123456789?&gt; h = &#123;:one =&gt; 1, :two =&gt; 2&#125;=&gt; &#123;:one=&gt;1, :two=&gt;2&#125;&gt;&gt; h=&gt; &#123;:one=&gt;1, :two=&gt;2&#125;&gt;&gt;?&gt; h = &#123;one: 1, two: 2&#125;=&gt; &#123;:one=&gt;1, :two=&gt;2&#125;&gt;&gt; h=&gt; &#123;:one=&gt;1, :two=&gt;2&#125; 常用方法 基础方法 1234567891011?&gt; a = &#123;&quot;one&quot; =&gt; &quot;grac&quot;, &quot;two&quot; =&gt; &quot;kanil&quot;&#125;=&gt; &#123;&quot;one&quot;=&gt;&quot;grac&quot;, &quot;two&quot;=&gt;&quot;kanil&quot;&#125;&gt;&gt;?&gt; a.keys=&gt; [&quot;one&quot;, &quot;two&quot;]&gt;&gt; a.values=&gt; [&quot;grac&quot;, &quot;kanil&quot;]&gt;&gt; a.length=&gt; 2&gt;&gt; a.size=&gt; 2 has_key? 1234?&gt; a = &#123;&quot;one&quot; =&gt; &quot;grac&quot;, &quot;two&quot; =&gt; &quot;kanil&quot;&#125;=&gt; &#123;&quot;one&quot;=&gt;&quot;grac&quot;, &quot;two&quot;=&gt;&quot;kanil&quot;&#125;&gt;&gt; a.has_key? &quot;one&quot;=&gt; true select 1234567?&gt; a = &#123;&quot;one&quot; =&gt; &quot;grac&quot;, &quot;two&quot; =&gt; &quot;kanil&quot;&#125;=&gt; &#123;&quot;one&quot;=&gt;&quot;grac&quot;, &quot;two&quot;=&gt;&quot;kanil&quot;&#125;?&gt; a.select &#123; |k, v| k == &quot;one&quot;&#125;=&gt; &#123;&quot;one&quot;=&gt;&quot;grac&quot;&#125;&gt;&gt;?&gt; a.select &#123; |k, v| k == &quot;one&quot; || k == &quot;two&quot;&#125;=&gt; &#123;&quot;one&quot;=&gt;&quot;grac&quot;, &quot;two&quot;=&gt;&quot;kanil&quot;&#125; to_a 1234?&gt; a = &#123;&quot;one&quot; =&gt; &quot;grac&quot;, &quot;two&quot; =&gt; &quot;kanil&quot;&#125;=&gt; &#123;&quot;one&quot;=&gt;&quot;grac&quot;, &quot;two&quot;=&gt;&quot;kanil&quot;&#125;?&gt; a.to_a=&gt; [[&quot;one&quot;, &quot;grac&quot;], [&quot;two&quot;, &quot;kanil&quot;]] 合并两个 Hash 12&gt;&gt; &#123; &quot;one&quot; =&gt; &quot;grac&quot; &#125;.merge(&#123; &quot;two&quot; =&gt; &quot;kanil&quot; &#125;)=&gt; &#123;&quot;one&quot;=&gt;&quot;grac&quot;, &quot;two&quot;=&gt;&quot;kanil&quot;&#125; fetch 和使用 [] 一样获取数组 value，但是如果没有会 raise 错误 1234567891011?&gt; a = &#123;&quot;one&quot; =&gt; &quot;grac&quot;, &quot;two&quot; =&gt; &quot;kanil&quot;&#125;=&gt; &#123;&quot;one&quot;=&gt;&quot;grac&quot;, &quot;two&quot;=&gt;&quot;kanil&quot;&#125;&gt;&gt; a[&quot;three&quot;]=&gt; nil&gt;&gt; a.fetch(&quot;two&quot;)=&gt; &quot;kanil&quot;&gt;&gt; a.fetch(&quot;three&quot;)KeyError: key not found: &quot;three&quot; from (irb):7:in `fetch&apos; from (irb):7 ... 函数关键字参数传递Ruby 不支持关键字参数，但可以使用 Hash 模拟出来123456789101112131415?&gt; class Article&gt;&gt; attr_accessor :name, :author, :price&gt;&gt;?&gt; def initialize(params = &#123;&#125;)&gt;&gt; @name = params[:name]&gt;&gt; @author = params[:author]&gt;&gt; @price = params[:price]&gt;&gt; end&gt;&gt; end=&gt; :initialize&gt;&gt; a = Article.new(name: &quot;雾都&quot;, author: &quot;tom&quot;, price: 12.5)=&gt; #&lt;Article:0x007ffc2189f970 @name=&quot;雾都&quot;, @author=&quot;tom&quot;, @price=12.5&gt;&gt;&gt;?&gt; a.name=&gt; &quot;雾都&quot; 迭代和数组很类似12345678?&gt; hash = &#123;name: &quot;雾都&quot;, author: &quot;tom&quot;, price: 12.5&#125;=&gt; &#123;:name=&gt;&quot;雾都&quot;, :author=&gt;&quot;tom&quot;, :price=&gt;12.5&#125;&gt;&gt;?&gt; hash.each &#123;|key, value| puts &quot;#&#123;key&#125; =&gt; #&#123;value&#125;&quot;&#125;name =&gt; 雾都author =&gt; tomprice =&gt; 12.5=&gt; &#123;:name=&gt;&quot;雾都&quot;, :author=&gt;&quot;tom&quot;, :price=&gt;12.5&#125;]]></content>
@@ -8,8 +20,8 @@
         <category>Ruby 札记</category>
       </categories>
       <tags>
-        <tag>Ruby</tag>
         <tag>Tutorial</tag>
+        <tag>Ruby</tag>
       </tags>
   </entry>
   <entry>
@@ -20,8 +32,8 @@
         <category>Ruby 札记</category>
       </categories>
       <tags>
-        <tag>Ruby</tag>
         <tag>Tutorial</tag>
+        <tag>Ruby</tag>
       </tags>
   </entry>
   <entry>
@@ -32,8 +44,8 @@
         <category>Ruby 札记</category>
       </categories>
       <tags>
-        <tag>Ruby</tag>
         <tag>Tutorial</tag>
+        <tag>Ruby</tag>
       </tags>
   </entry>
   <entry>
@@ -44,8 +56,8 @@
         <category>Ruby 札记</category>
       </categories>
       <tags>
-        <tag>Ruby</tag>
         <tag>Tutorial</tag>
+        <tag>Ruby</tag>
       </tags>
   </entry>
   <entry>
@@ -56,8 +68,8 @@
         <category>Ruby 札记</category>
       </categories>
       <tags>
-        <tag>Ruby</tag>
         <tag>Tutorial</tag>
+        <tag>Ruby</tag>
       </tags>
   </entry>
   <entry>
@@ -68,8 +80,8 @@
         <category>Ruby 札记</category>
       </categories>
       <tags>
-        <tag>Ruby</tag>
         <tag>Tutorial</tag>
+        <tag>Ruby</tag>
       </tags>
   </entry>
   <entry>
@@ -80,8 +92,8 @@
         <category>Ruby 札记</category>
       </categories>
       <tags>
-        <tag>Ruby</tag>
         <tag>Tutorial</tag>
+        <tag>Ruby</tag>
       </tags>
   </entry>
   <entry>
@@ -104,8 +116,8 @@
         <category>兜</category>
       </categories>
       <tags>
-        <tag>Tutorial</tag>
         <tag>Hexo</tag>
+        <tag>Tutorial</tag>
       </tags>
   </entry>
   <entry>
@@ -124,8 +136,8 @@
         <category>兜</category>
       </categories>
       <tags>
-        <tag>Tutorial</tag>
         <tag>Hexo</tag>
+        <tag>Tutorial</tag>
       </tags>
   </entry>
 </search>
