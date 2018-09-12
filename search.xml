@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[iOS 真机中设置 Slow Animations]]></title>
+    <title><![CDATA[CentOS 搭建 Socks5 Proxy 代理服务器]]></title>
     <url>%2F2018%2F08%2F29%2Fios-slow-animation%2F</url>
-    <content type="text"><![CDATA[分享个 XCode LLDB 调试小技巧 前言在 iOS 开发中，动画也是一个很重要的组成部分。你会不会因为动画需要有灵性，苦于一点点调试参数，但又看不清楚细节？会不会遇到 App 中某些色块一闪而过？会不会突然闪屏不知道为什么？ 当然，不可避免。 可能会用到的调试技巧或许有些人，早已知道，模拟器中，苹果提供了 Slow Animations 选项。也或许有些人还不知道，或者未尝试使用过。 模拟器开启 Slow Animations打开模拟器，菜单栏 &gt; Debug &gt; Show Animations 真机开启 Slow Animations 可以使用 LLDB 实现 Slow Animations1) 点击 Debug 区域的 Pause program execution2) 点击 Debug 区域的 LLDB 中输入命令 p [(CALayer *)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] layer] setSpeed:.1f]另外，Swift 使用 p UIApplication.sharedApplication().windows.first?.layer.speed = 0.1 即可。3) 点击 Debug 区域的 Continue program execution 可以代码形式实现 Slow AnimationsdidFinishLaunchingWithOptions 中设置 self.window.layer.speed = .1f;]]></content>
+    <content type="text"><![CDATA[Socks 5SS5 官方网站 命令汇总 查看系统环境 1234567891011121314151617uname -aLinux vultr.guest 3.10.0-862.3.2.el7.x86_64 #1 SMP Mon May 21 23:36:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linuxcat /etc/os-releaseNAME=&quot;CentOS Linux&quot;VERSION=&quot;7 (Core)&quot;ID=&quot;centos&quot;ID_LIKE=&quot;rhel fedora&quot;VERSION_ID=&quot;7&quot;PRETTY_NAME=&quot;CentOS Linux 7 (Core)&quot;ANSI_COLOR=&quot;0;31&quot;CPE_NAME=&quot;cpe:/o:centos:centos:7&quot;HOME_URL=&quot;https://www.centos.org/&quot;BUG_REPORT_URL=&quot;https://bugs.centos.org/&quot;yum --version3.4.3 安装依赖 1yum install gcc openldap-devel pam-devel openssl-devel 下载 socks5 1wget http://jaist.dl.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz 解压 1tar -vzx -f ss5-3.8.9-8.tar.gz 进入目录 1cd ss5-3.8.9/ 运行./configure，完成环境检查 1./configure 编译 1make 安装 1make install 修改脚本权限 1chmod a+x /etc/init.d/ss5 修改 socks5 配置文件，放开 auth 和 permit 注释 12345vi /etc/opt/ss5/ss5.conf# 如果需要配置访问权限# auth 0.0.0.0/0 - u# permit u 0.0.0.0/0 - 0.0.0.0/0 - - - - - 修改用户密码 123vi /etc/opt/ss5/ss5.passwd# 格式为 用户名 密码# username password 修改端口 123vi /etc/sysconfig/ss5# SS5_OPTS=&quot; -u root -b 0.0.0.0:8080&quot; 启动服务 1service ss5 start 添加自启动 123chkconfig --add ss5chkconfig --level 345 ss5 onchkconfig --list | grep ss5]]></content>
       <categories>
-        <category>iOS</category>
+        <category>CentOS</category>
       </categories>
       <tags>
-        <tag>LLDB</tag>
-        <tag>Debug</tag>
+        <tag>Socks5 Proxy</tag>
       </tags>
   </entry>
   <entry>
