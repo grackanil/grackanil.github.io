@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|Comic Sans MS:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Tutorial,Ruby," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Grac Kanil" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Ruby —— 有趣的哲学。  What,Why,Where,How? 你或许会问这些问题，接下来，浅谈些许拙见。  0x00 前言大学时，在一个分享会上，听一个科大的准研究生说，“如何理解计算机基础？首先从思维方式上就要转变，站在计算机的角度去思考问题。”似乎也不无道理。我想，工程师大多也都是这个思维，这样机器就能运行的更快，运行效率更高… 然而，松本行弘先生(Matz)设计 Ruby 语言第">
+<meta name="keywords" content="Tutorial,Ruby">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ruby 札记 - 浅谈和配置 Ruby">
+<meta property="og:url" content="http://grackanil.top/2018/07/26/ruby-tutorial-environment/index.html">
+<meta property="og:site_name" content="Grac Kanil">
+<meta property="og:description" content="Ruby —— 有趣的哲学。  What,Why,Where,How? 你或许会问这些问题，接下来，浅谈些许拙见。  0x00 前言大学时，在一个分享会上，听一个科大的准研究生说，“如何理解计算机基础？首先从思维方式上就要转变，站在计算机的角度去思考问题。”似乎也不无道理。我想，工程师大多也都是这个思维，这样机器就能运行的更快，运行效率更高… 然而，松本行弘先生(Matz)设计 Ruby 语言第">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-01T06:05:24.367Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ruby 札记 - 浅谈和配置 Ruby">
+<meta name="twitter:description" content="Ruby —— 有趣的哲学。  What,Why,Where,How? 你或许会问这些问题，接下来，浅谈些许拙见。  0x00 前言大学时，在一个分享会上，听一个科大的准研究生说，“如何理解计算机基础？首先从思维方式上就要转变，站在计算机的角度去思考问题。”似乎也不无道理。我想，工程师大多也都是这个思维，这样机器就能运行的更快，运行效率更高… 然而，松本行弘先生(Matz)设计 Ruby 语言第">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://grackanil.top/2018/07/26/ruby-tutorial-environment/"/>
+
+
+
+
+
+  <title>Ruby 札记 - 浅谈和配置 Ruby | Grac Kanil</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/grackanil" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#3B6D51; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Grac Kanil</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">「以梦为马，不负韶华。」</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://grackanil.top/2018/07/26/ruby-tutorial-environment/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Grac Kanil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Grac Kanil">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Ruby 札记 - 浅谈和配置 Ruby</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T00:27:25+08:00">
+                2018-07-26
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-05-01T14:05:24+08:00">
+                2019-05-01
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby-札记/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby 札记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+                  <i class="fa fa-tripadvisor"></i>
+            </span>
+            <span class="post-meta-item-text">阅读次数</span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  945
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Ruby —— 有趣的哲学。</p>
+<blockquote>
+<p>What,Why,Where,How? 你或许会问这些问题，接下来，浅谈些许拙见。</p>
+</blockquote>
+<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>大学时，在一个分享会上，听一个科大的准研究生说，“如何理解计算机基础？首先从思维方式上就要转变，站在计算机的角度去思考问题。”似乎也不无道理。我想，工程师大多也都是这个思维，这样机器就能运行的更快，运行效率更高…</p>
+<p>然而，松本行弘先生(Matz)设计 Ruby 语言第一要义，就是 <code>减少编程时候的不必要的琐碎时间，令编写程序的人高兴。</code> </p>
+<p>Matz 认为 Ruby &gt; (Smalltalk + Perl) / 2，表示Ruby是一个语法像 Smalltalk 一样完全面向对象、脚本运行、又有 Perl 强大的文字处理功能的编程语言。说到 Smalltalk ，不得不提一下 Objective-C， 它最大的特色就是承自 Smalltalk 的消息传递模型（message passing），该机制与今日 C++ 式之主流风格差异甚大。所以也提高了我探寻的兴趣 ；）</p>
+<h2 id="0x01-Ruby-是什么"><a href="#0x01-Ruby-是什么" class="headerlink" title="0x01 Ruby 是什么"></a>0x01 Ruby 是什么</h2><p>Ruby 是一种面向对象、命令式、函数式、动态的通用编程语言。</p>
+<p>Ruby has been designed on the Principle of Least Surprise - Matz says “I wanted to minimize my frustration during programming, so I want to minimize my effort in programming. That was my primary goal in designing Ruby. I want to have fun in programming myself. After releasing Ruby and many people around the world got to know Ruby, they said they feel the way I feel. They came up with the phrase the principle of least surprise.”</p>
+<p>2001 年，Oreilly 对 Matz 的一个关于 Ruby 历史的<a href="https://www.oreilly.com/ideas" target="_blank" rel="noopener">采访</a>. Matz 的 “<a href="https://www.artima.com/intv/ruby.html" target="_blank" rel="noopener">The Philosophy of Ruby</a>“ 也值得学习。</p>
+<h2 id="0x02-为什么要学习-Ruby"><a href="#0x02-为什么要学习-Ruby" class="headerlink" title="0x02 为什么要学习 Ruby"></a>0x02 为什么要学习 Ruby</h2><p><code>有趣</code>。这是一个好的问题，但这也是一个大家都知道答案的问题。一千个读者就有一千个哈姆雷特，我想也类似于这个问题。我简单说一下我的原因，有些人会说，语言只是工具而已，不用学习那么多。希望大家辩证的思考这个观点，每一门语言，每一个设计，都有自己的原则，都有自己的思维方式，自己的哲学存在。学习锻炼自己，发人深省。每一个 iOS 开发者，对 Smalltalk 或多或少会有些情愫，Ruby 中也能看到它的影子，不免有些共鸣。</p>
+<h2 id="0x03-如何学习-Ruby"><a href="#0x03-如何学习-Ruby" class="headerlink" title="0x03 如何学习 Ruby"></a>0x03 如何学习 Ruby</h2><h3 id="一、下载-Ruby"><a href="#一、下载-Ruby" class="headerlink" title="一、下载 Ruby"></a>一、下载 Ruby</h3><p>for Windows，个人多一句，建议不使用 Windows 环境学习 Ruby，有两个原因，第一，Ruby 对 Unix 环境的需求非常高；第二，Ruby 在 Windows 环境下面执行效率低。或多或少会有些弯路。</p>
+<ul>
+<li>下载 <a href="https://rubyinstaller.org/" target="_blank" rel="noopener">Ruby for Windows</a></li>
+<li>双击同意协议</li>
+<li>配置环境变量</li>
+</ul>
+<p>for UNIX-like，首先不建议使用系统预装的，可能比较过时了，另外，推荐使用 <code>rbenv</code>、 <code>RVM</code> 或者 <code>chruby</code> 管理 Ruby 环境。</p>
+<ul>
+<li>先安装 <a href="http://developer.apple.com/xcode/" target="_blank" rel="noopener">Xcode</a> 开发工具，它将帮你安装好 Unix 环境需要的开发包</li>
+<li>然后安装 <a href="http://brew.sh" target="_blank" rel="noopener">Homebrew</a></li>
+<li><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></li>
+<li>如果需要安装 Rails，安装 <code>brew install libxml2 libxslt libiconv</code> 必须的依赖第三库</li>
+<li><p>安装 RVM</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3</span><br><span class="line">$ -sSL https://get.rvm.io | bash -s stable</span><br><span class="line">如果失败，尝试</span><br><span class="line">$ curl -L https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable</span><br><span class="line">$ source ~/.rvm/scripts/rvm</span><br><span class="line">$ echo &quot;ruby_url=https://cache.ruby-china.org/pub/ruby&quot; &gt; ~/.rvm/user/db</span><br><span class="line">$ rvm -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>RVM 安装 Ruby</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ rvm requirements</span><br><span class="line">$ rvm install 2.4.0</span><br><span class="line">$ rvm use 2.4.0 --default</span><br><span class="line">$ ruby -v</span><br><span class="line">$ gem -v</span><br><span class="line">$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 Bundler</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gem install bundler</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 Rails</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ gem install rails</span><br><span class="line">$ rails -v</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="二、下载一个编辑器"><a href="#二、下载一个编辑器" class="headerlink" title="二、下载一个编辑器"></a>二、下载一个编辑器</h3><ul>
+<li>Visual Studio Code</li>
+<li>Atom</li>
+<li>Sublime Text</li>
+<li>Vim 或 Emacs</li>
+</ul>
+<h2 id="0x04-在哪儿学习-Ruby"><a href="#0x04-在哪儿学习-Ruby" class="headerlink" title="0x04 在哪儿学习 Ruby"></a>0x04 在哪儿学习 Ruby</h2><ul>
+<li><a href="http://rubylearning.com/satishtalim/tutorial.html" target="_blank" rel="noopener">rubylearning</a></li>
+<li><a href="https://www.ruby-lang.org/zh_cn/" target="_blank" rel="noopener">ruby lang</a></li>
+<li><a href="https://ruby-china.org/" target="_blank" rel="noopener">ruby china 社区</a></li>
+<li><a href="http://phrogz.net/programmingruby/" target="_blank" rel="noopener">Programming Ruby</a></li>
+<li>持续学习更新收集中…（PS:此处支持布道者推荐）</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Grac Kanil
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://grackanil.top/2018/07/26/ruby-tutorial-environment/" title="Ruby 札记 - 浅谈和配置 Ruby">http://grackanil.top/2018/07/26/ruby-tutorial-environment/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Tutorial/" rel="tag"><i class="fa fa-tag"></i> Tutorial</a>
+          
+            <a href="/tags/Ruby/" rel="tag"><i class="fa fa-tag"></i> Ruby</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/03/ios-slow-animation/" rel="next" title="iOS 真机中设置 Slow Animations">
+                <i class="fa fa-chevron-left"></i> iOS 真机中设置 Slow Animations
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/26/ruby-feature/" rel="prev" title="Ruby 札记 - 浅尝 Ruby 特性">
+                Ruby 札记 - 浅尝 Ruby 特性 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Grac Kanil" />
+            
+              <p class="site-author-name" itemprop="name">Grac Kanil</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/grackanil" target="_blank" title="GitHub">
+                      GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/grackanil" target="_blank" title="Twitter">
+                      Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="ruanyifeng" target="_blank">ruanyifeng</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-前言"><span class="nav-number">1.</span> <span class="nav-text">0x00 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-Ruby-是什么"><span class="nav-number">2.</span> <span class="nav-text">0x01 Ruby 是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-为什么要学习-Ruby"><span class="nav-number">3.</span> <span class="nav-text">0x02 为什么要学习 Ruby</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-如何学习-Ruby"><span class="nav-number">4.</span> <span class="nav-text">0x03 如何学习 Ruby</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、下载-Ruby"><span class="nav-number">4.1.</span> <span class="nav-text">一、下载 Ruby</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、下载一个编辑器"><span class="nav-number">4.2.</span> <span class="nav-text">二、下载一个编辑器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-在哪儿学习-Ruby"><span class="nav-number">5.</span> <span class="nav-text">0x04 在哪儿学习 Ruby</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Grac Kanil</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">总字数&#58;</span>
+    
+    <span title="总字数">17.5k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'jaVf0MPQaJTV41ynO56FSKLv-gzGzoHsz',
+        appKey: 'jGHDKGiFDMJiExs4DdrjtwTG',
+        placeholder: '学习交流，欢迎指正~',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

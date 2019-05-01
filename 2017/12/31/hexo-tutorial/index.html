@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|Comic Sans MS:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo,Tutorial," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Grac Kanil" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="记录一次 Hexo 从零开始搭建的历程。 前言很早就了解到可以通过 GitHub 托管静态网页，使用 Hexo 和 GitHub Pages 方便快捷地搭建个人博客网站，也一直想通过一种方式整理和管理知识，遂从零开始搭建、配置属于自己的博客网站。 注册 GitHubGitHub 是一个面向开源及私有软件项目的托管平台。最好最详细的教程是 官方文档 望多查阅。以下是我简要说明，有错误还望指正包涵。">
+<meta name="keywords" content="Hexo,Tutorial">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo Tutorial - 基本搭建和配置">
+<meta property="og:url" content="http://grackanil.top/2017/12/31/hexo-tutorial/index.html">
+<meta property="og:site_name" content="Grac Kanil">
+<meta property="og:description" content="记录一次 Hexo 从零开始搭建的历程。 前言很早就了解到可以通过 GitHub 托管静态网页，使用 Hexo 和 GitHub Pages 方便快捷地搭建个人博客网站，也一直想通过一种方式整理和管理知识，遂从零开始搭建、配置属于自己的博客网站。 注册 GitHubGitHub 是一个面向开源及私有软件项目的托管平台。最好最详细的教程是 官方文档 望多查阅。以下是我简要说明，有错误还望指正包涵。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/github_login.png">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/github_login_5.png">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/github_login_3.png">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/github_login_4.png">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/github_ssh_3.png">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/github_pages_1.png">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/github_pages_7.png">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/github_pages_2.png">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/github_pages_3.png">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/github_pages_4.png">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/github_pages_5.png">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/github_pages_6.png">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/github_domain_name.png">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/github_cname.png">
+<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/hexo_1.png">
+<meta property="og:updated_time" content="2019-05-01T06:02:02.754Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo Tutorial - 基本搭建和配置">
+<meta name="twitter:description" content="记录一次 Hexo 从零开始搭建的历程。 前言很早就了解到可以通过 GitHub 托管静态网页，使用 Hexo 和 GitHub Pages 方便快捷地搭建个人博客网站，也一直想通过一种方式整理和管理知识，遂从零开始搭建、配置属于自己的博客网站。 注册 GitHubGitHub 是一个面向开源及私有软件项目的托管平台。最好最详细的教程是 官方文档 望多查阅。以下是我简要说明，有错误还望指正包涵。">
+<meta name="twitter:image" content="http://oxwk2uou0.bkt.clouddn.com/github_login.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://grackanil.top/2017/12/31/hexo-tutorial/"/>
+
+
+
+
+
+  <title>Hexo Tutorial - 基本搭建和配置 | Grac Kanil</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/grackanil" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#3B6D51; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Grac Kanil</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">「以梦为马，不负韶华。」</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://grackanil.top/2017/12/31/hexo-tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Grac Kanil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Grac Kanil">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Hexo Tutorial - 基本搭建和配置</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-31T00:10:39+08:00">
+                2017-12-31
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-05-01T14:02:02+08:00">
+                2019-05-01
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/兜/" itemprop="url" rel="index">
+                    <span itemprop="name">兜</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+                  <i class="fa fa-tripadvisor"></i>
+            </span>
+            <span class="post-meta-item-text">阅读次数</span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,665
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>记录一次 Hexo 从零开始搭建的历程。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>很早就了解到可以通过 GitHub 托管静态网页，使用 Hexo 和 GitHub Pages 方便快捷地搭建个人博客网站，也一直想通过一种方式整理和管理知识，遂从零开始搭建、配置属于自己的博客网站。</p>
+<h2 id="注册-GitHub"><a href="#注册-GitHub" class="headerlink" title="注册 GitHub"></a>注册 GitHub</h2><p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> 是一个面向开源及私有软件项目的托管平台。最好最详细的教程是 <a href="https://guides.github.com/activities/hello-world/" target="_blank" rel="noopener">官方文档</a> 望多查阅。以下是我简要说明，有错误还望指正包涵。</p>
+<h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><p><img src="http://oxwk2uou0.bkt.clouddn.com/github_login.png" alt="GitHub Register"></p>
+<h3 id="验证邮箱"><a href="#验证邮箱" class="headerlink" title="验证邮箱"></a>验证邮箱</h3><p>登录注册邮箱，验证账号。<br><img src="http://oxwk2uou0.bkt.clouddn.com/github_login_5.png" alt="验证邮箱"></p>
+<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p><img src="http://oxwk2uou0.bkt.clouddn.com/github_login_3.png" alt="创建仓库"><br><img src="http://oxwk2uou0.bkt.clouddn.com/github_login_4.png" alt="创建完成"></p>
+<h3 id="通过-SSH-建立连接，详见-文档-，使用-SSH-协议，每次访问可以无需用户名和密码连接-GitHub-。"><a href="#通过-SSH-建立连接，详见-文档-，使用-SSH-协议，每次访问可以无需用户名和密码连接-GitHub-。" class="headerlink" title="通过 SSH 建立连接，详见 文档 ，使用 SSH 协议，每次访问可以无需用户名和密码连接 GitHub 。"></a>通过 SSH 建立连接，详见 <a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank" rel="noopener">文档</a> ，使用 SSH 协议，每次访问可以无需用户名和密码连接 GitHub 。</h3><h4 id="检查是否已经存在-SSH-keys"><a href="#检查是否已经存在-SSH-keys" class="headerlink" title="检查是否已经存在 SSH keys"></a>检查是否已经存在 SSH keys</h4><p>打开终端，使用<code>ls -al ~/.ssh</code>查看，如果在<code>.ssh</code>目录下存在文件列表，说明已经存在 SSH keys 。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ ls -al ~/.ssh</span><br><span class="line">total 24</span><br><span class="line">drwx------    5 gekang  staff   160  9 26 10:03 .</span><br><span class="line">drwxr-xr-x+ 115 gekang  staff  3680 12 31 14:04 ..</span><br><span class="line">-rw-------    1 gekang  staff  1675  9  8 19:59 id_rsa</span><br><span class="line">-rw-------    1 gekang  staff   398  9  8 19:59 id_rsa.pub</span><br><span class="line">-rw-r--r--    1 gekang  staff  2178 12 27 23:30 known_hosts</span><br></pre></td></tr></table></figure></p>
+<h4 id="如果没有-public-key-，生成-SSH；如果已经有了，直接配置即可"><a href="#如果没有-public-key-，生成-SSH；如果已经有了，直接配置即可" class="headerlink" title="如果没有 public key ，生成 SSH；如果已经有了，直接配置即可"></a>如果没有 public key ，生成 SSH；如果已经有了，直接配置即可</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ssh-keygen -t rsa -C "yourmail@xxx.com"</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">&lt;!-- 直接输入回车即可 --&gt;</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/root/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
+<p>要求输入密码，可以一路回车。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /root/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /root/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:Kf8+luLAnbCkfUxraCX88K9x4WJHqym+WItUPr5sr yourmail@xxx.com</span><br><span class="line">The key<span class="string">'s randomart image is:</span></span><br><span class="line"><span class="string">+---[RSA 2048]----+</span></span><br><span class="line"><span class="string">|                 |</span></span><br><span class="line"><span class="string">|                 |</span></span><br><span class="line"><span class="string">|    o +          |</span></span><br><span class="line"><span class="string">|   . B . .       |</span></span><br><span class="line"><span class="string">|  + o X S        |</span></span><br><span class="line"><span class="string">|  .* S @ o       |</span></span><br><span class="line"><span class="string">| .o.= @ O  .     |</span></span><br><span class="line"><span class="string">| o+B = =..+      |</span></span><br><span class="line"><span class="string">|.+E+. ...+o.     |</span></span><br><span class="line"><span class="string">+----[SHA256]-----+</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="配置-SSH"><a href="#配置-SSH" class="headerlink" title="配置 SSH"></a>配置 SSH</h4><ul>
+<li>找到 id_rsa.pub 中的 public key ，位置如上路径，复制出 public key。<br>复制 public key 时，不要重起一行，添加空格，可以使用<code>pbcopy &lt; ~/.ssh/id_rsa.pub</code>复制到剪贴板</li>
+<li>进入 GitHub Setting 页面，配置 SSH。<br><img src="http://oxwk2uou0.bkt.clouddn.com/github_ssh_3.png" alt="配置SSH"></li>
+<li>创建 SSH ，title 任意输入，粘贴 public key ，然后 Add SSH key。</li>
+</ul>
+<h4 id="测试连接"><a href="#测试连接" class="headerlink" title="测试连接"></a>测试连接</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>可能看到警告：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'github.com (IP ADDRESS)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure></p>
+<p>或<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'github.com (IP ADDRESS)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure></p>
+<p>验证 fingerprint ,然后 type yes<br>然后，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hi username! You<span class="string">'ve successfully authenticated, but GitHub does not</span></span><br><span class="line"><span class="string">provide shell access.</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="简述-GitHub-Pages"><a href="#简述-GitHub-Pages" class="headerlink" title="简述 GitHub Pages"></a>简述 GitHub Pages</h2><p><a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>是 GitHub 提供的一个静态网站托管服务。同样，<a href="https://help.github.com/categories/github-pages-basics/" target="_blank" rel="noopener">官方文档</a>是最好的教程。<br><img src="http://oxwk2uou0.bkt.clouddn.com/github_pages_1.png" alt="官网首页"></p>
+<h3 id="GitHub-Pages-可以用为两种类型：用户或组织主页；项目工程主页。"><a href="#GitHub-Pages-可以用为两种类型：用户或组织主页；项目工程主页。" class="headerlink" title="GitHub Pages 可以用为两种类型：用户或组织主页；项目工程主页。"></a>GitHub Pages 可以用为两种类型：用户或组织主页；项目工程主页。</h3><p><img src="http://oxwk2uou0.bkt.clouddn.com/github_pages_7.png" alt="类型"></p>
+<h3 id="搭建个人主页，以username-github-io名创建仓库"><a href="#搭建个人主页，以username-github-io名创建仓库" class="headerlink" title="搭建个人主页，以username.github.io名创建仓库"></a>搭建个人主页，以<code>username.github.io</code>名创建仓库</h3><p><img src="http://oxwk2uou0.bkt.clouddn.com/github_pages_2.png" alt="搭建个人主页"></p>
+<h3 id="克隆仓库到本地"><a href="#克隆仓库到本地" class="headerlink" title="克隆仓库到本地"></a>克隆仓库到本地</h3><p><img src="http://oxwk2uou0.bkt.clouddn.com/github_pages_3.png" alt="克隆仓库"></p>
+<h3 id="本地编辑个人静态主页"><a href="#本地编辑个人静态主页" class="headerlink" title="本地编辑个人静态主页"></a>本地编辑个人静态主页</h3><p><img src="http://oxwk2uou0.bkt.clouddn.com/github_pages_4.png" alt="克隆仓库"></p>
+<h3 id="Push-到远程仓库。"><a href="#Push-到远程仓库。" class="headerlink" title="Push 到远程仓库。"></a>Push 到远程仓库。</h3><p>此处说明，若使用 SSH ，创建 GitHub 已建立 SSH 连接，可以直接 Push；若无，建立连接，或者使用 Https 推送到远程仓库，其间需要输入用户名和密码。<br><img src="http://oxwk2uou0.bkt.clouddn.com/github_pages_5.png" alt="克隆仓库"></p>
+<h3 id="以上若都成功，访问个人主页，https-username-github-io"><a href="#以上若都成功，访问个人主页，https-username-github-io" class="headerlink" title="以上若都成功，访问个人主页，https://username.github.io."></a>以上若都成功，访问个人主页，<code>https://username.github.io.</code></h3><p><img src="http://oxwk2uou0.bkt.clouddn.com/github_pages_6.png" alt="克隆仓库"></p>
+<h2 id="域名注册、绑定"><a href="#域名注册、绑定" class="headerlink" title="域名注册、绑定"></a>域名注册、绑定</h2><p>我的个人主页是万网注册的域名，所以简述<a href="https://wanwang.aliyun.com/" target="_blank" rel="noopener">万网</a>域名购买和绑定。同样也有很详细的<a href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/" target="_blank" rel="noopener">文档</a></p>
+<h3 id="注册登录阿里云"><a href="#注册登录阿里云" class="headerlink" title="注册登录阿里云"></a>注册登录<a href="https://www.aliyun.com" target="_blank" rel="noopener">阿里云</a></h3><h3 id="购买域名，进入控制中心"><a href="#购买域名，进入控制中心" class="headerlink" title="购买域名，进入控制中心"></a>购买域名，进入控制中心</h3><p><img src="http://oxwk2uou0.bkt.clouddn.com/github_domain_name.png" alt="控制中心"></p>
+<h3 id="管理域名，添加域名解析"><a href="#管理域名，添加域名解析" class="headerlink" title="管理域名，添加域名解析"></a>管理域名，添加域名解析</h3><p>GitHub 推荐使用 www 的二级域名，给域名添加解析，记录类型都是 A 记录，记录值全部对应刚才 ping 出来的 IP 。<br><img src="http://oxwk2uou0.bkt.clouddn.com/github_cname.png" alt="设置域名解析"></p>
+<h3 id="添加CNAME文件到github仓库"><a href="#添加CNAME文件到github仓库" class="headerlink" title="添加CNAME文件到github仓库"></a>添加CNAME文件到github仓库</h3><p>由于<code>hexo d</code>部署时，依据<code>.gitignore</code>文件，会清除所有文件，所以如要将 CNAME 部署到 GitHub 中，必须将 CNAME 放置 source 文件夹中（可以放在后面 Hexo 安装后，初始化项目中 source 目录下）。CNAME 文件中是<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 域名为grackanil.top</span></span><br><span class="line"><span class="comment"># 二级域名</span></span><br><span class="line">www.grackanil.top</span><br><span class="line"><span class="comment"># 一级域名</span></span><br><span class="line">grackanil.top</span><br></pre></td></tr></table></figure></p>
+<h2 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h2><p>安装 Hexo 相当简单。<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">官方文档</a></p>
+<h3 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h3><h4 id="如果安装了-Node-js-和-Git，只需要使用-npm-即可完成-Hexo-的安装"><a href="#如果安装了-Node-js-和-Git，只需要使用-npm-即可完成-Hexo-的安装" class="headerlink" title="如果安装了 Node.js 和 Git，只需要使用 npm 即可完成 Hexo 的安装"></a>如果安装了 <code>Node.js</code> 和 <code>Git</code>，只需要使用 <code>npm</code> 即可完成 <code>Hexo</code> 的安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h4 id="如果没有安装-Node-js-和-Git，以下均为-Mac-环境下。"><a href="#如果没有安装-Node-js-和-Git，以下均为-Mac-环境下。" class="headerlink" title="如果没有安装 Node.js 和 Git，以下均为 Mac 环境下。"></a>如果没有安装 <code>Node.js</code> 和 <code>Git</code>，以下均为 Mac 环境下。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用 brew 安装 git</span></span><br><span class="line">brew install git</span><br><span class="line"><span class="comment"># 可以使用 cURL 安装 nvm</span></span><br><span class="line">$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br><span class="line"><span class="comment"># 也可以 使用 Wget 安装 nvm</span></span><br><span class="line">$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br><span class="line"><span class="comment"># 使用最佳安装方式：nvm 安装 Node.js</span></span><br><span class="line">$ nvm install stable</span><br></pre></td></tr></table></figure>
+<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3 id="初始化-Hexo-建站"><a href="#初始化-Hexo-建站" class="headerlink" title="初始化 Hexo 建站"></a>初始化 Hexo 建站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 初始化 Hexo，会在目标文件夹建立网站所需要的所有文件</span></span><br><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line"><span class="comment"># 进入项目目录</span></span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line"><span class="comment"># 安装依赖包</span></span><br><span class="line">$ npm install</span><br><span class="line"><span class="comment"># 查看项目第一层目录</span></span><br><span class="line">$ tree -L 1</span><br><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── node_modules</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── <span class="built_in">source</span></span><br><span class="line">├── themes</span><br><span class="line">└── yarn.lock</span><br><span class="line"><span class="comment"># 更改后清除静态文件夹的内容并删掉</span></span><br><span class="line">$ hexo clean </span><br><span class="line"><span class="comment"># 本地启动服务</span></span><br><span class="line"><span class="comment"># hexo generate ，生成静态文件到 public 文件夹</span></span><br><span class="line">$ hexo g</span><br><span class="line">INFO  Start processing</span><br><span class="line">...</span><br><span class="line">INFO  Generated: 2018/01/01/hello-world/index.html</span><br><span class="line">INFO  28 files generated <span class="keyword">in</span> 916 ms</span><br><span class="line"><span class="comment"># hexo server，在本地服务器运行</span></span><br><span class="line">$ hexo s</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<h3 id="访问-http-localhost-4000"><a href="#访问-http-localhost-4000" class="headerlink" title="访问 http://localhost:4000/"></a>访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></h3><p><img src="http://oxwk2uou0.bkt.clouddn.com/hexo_1.png" alt="预览"></p>
+<h3 id="部署到-GitHub，前提是已经注册-GitHub，创建-username-github-io-仓库"><a href="#部署到-GitHub，前提是已经注册-GitHub，创建-username-github-io-仓库" class="headerlink" title="部署到 GitHub，前提是已经注册 GitHub，创建 username.github.io 仓库"></a>部署到 GitHub，前提是已经注册 <code>GitHub</code>，创建 <code>username.github.io</code> 仓库</h3><h4 id="安装-GitHub-依赖插件"><a href="#安装-GitHub-依赖插件" class="headerlink" title="安装 GitHub 依赖插件"></a>安装 GitHub 依赖插件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h4 id="配置更目录下的-config-yml文件"><a href="#配置更目录下的-config-yml文件" class="headerlink" title="配置更目录下的 _config.yml文件"></a>配置更目录下的 <code>_config.yml</code>文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: ssh://git@github.com/grackanil/grackanil.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h4 id="部署命令"><a href="#部署命令" class="headerlink" title="部署命令"></a>部署命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 部署，hexo deploy</span></span><br><span class="line">$ hexo d</span><br><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
+<h3 id="访问个人主页"><a href="#访问个人主页" class="headerlink" title="访问个人主页"></a>访问个人主页</h3><p>访问 username.github.io，如 grackanil.github.io，根目录 <code>source</code> 下已经创建<code>CNAME</code>，绑定自定义域名，可以访问域名。</p>
+<h2 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h2><p>Hexo 安装主题很方便，只需要将主题文件拷贝至站点目录的 themes 目录下， 然后修改下配置文件即可。以安装NexT为例，可以访问<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT主题文档</a>。</p>
+<h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入站点目录</span></span><br><span class="line">$ <span class="built_in">cd</span> your-hexo-site</span><br><span class="line"><span class="comment"># checkout 代码</span></span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<h3 id="修改站点配置目录"><a href="#修改站点配置目录" class="headerlink" title="修改站点配置目录"></a>修改站点配置目录</h3><p>根目录下的<code>站点配置文件</code> <strong>config.yml，区别于主题目录下的<code>主题配置文件</code></strong>config.yml。启动主题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure></p>
+<h3 id="验证主题"><a href="#验证主题" class="headerlink" title="验证主题"></a>验证主题</h3><p>使用 <code>hexo clean</code> 来清除 Hexo 的缓存，启动服务 <code>hexo s --debug</code>，待成功后，访问<code>http://localhost:4000</code></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>至此，简单的 NexT 默认配置主题的 Hexo 静态个人主页就搭建完成了。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Grac Kanil
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://grackanil.top/2017/12/31/hexo-tutorial/" title="Hexo Tutorial - 基本搭建和配置">http://grackanil.top/2017/12/31/hexo-tutorial/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+          
+            <a href="/tags/Tutorial/" rel="tag"><i class="fa fa-tag"></i> Tutorial</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/31/hexo-theme-tutorial/" rel="prev" title="Hexo Tutorial - NexT 主题配置和第三方服务">
+                Hexo Tutorial - NexT 主题配置和第三方服务 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Grac Kanil" />
+            
+              <p class="site-author-name" itemprop="name">Grac Kanil</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/grackanil" target="_blank" title="GitHub">
+                      GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/grackanil" target="_blank" title="Twitter">
+                      Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="ruanyifeng" target="_blank">ruanyifeng</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册-GitHub"><span class="nav-number">2.</span> <span class="nav-text">注册 GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册"><span class="nav-number">2.1.</span> <span class="nav-text">注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证邮箱"><span class="nav-number">2.2.</span> <span class="nav-text">验证邮箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建仓库"><span class="nav-number">2.3.</span> <span class="nav-text">创建仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-SSH-建立连接，详见-文档-，使用-SSH-协议，每次访问可以无需用户名和密码连接-GitHub-。"><span class="nav-number">2.4.</span> <span class="nav-text">通过 SSH 建立连接，详见 文档 ，使用 SSH 协议，每次访问可以无需用户名和密码连接 GitHub 。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#检查是否已经存在-SSH-keys"><span class="nav-number">2.4.1.</span> <span class="nav-text">检查是否已经存在 SSH keys</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果没有-public-key-，生成-SSH；如果已经有了，直接配置即可"><span class="nav-number">2.4.2.</span> <span class="nav-text">如果没有 public key ，生成 SSH；如果已经有了，直接配置即可</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置-SSH"><span class="nav-number">2.4.3.</span> <span class="nav-text">配置 SSH</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试连接"><span class="nav-number">2.4.4.</span> <span class="nav-text">测试连接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简述-GitHub-Pages"><span class="nav-number">3.</span> <span class="nav-text">简述 GitHub Pages</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub-Pages-可以用为两种类型：用户或组织主页；项目工程主页。"><span class="nav-number">3.1.</span> <span class="nav-text">GitHub Pages 可以用为两种类型：用户或组织主页；项目工程主页。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建个人主页，以username-github-io名创建仓库"><span class="nav-number">3.2.</span> <span class="nav-text">搭建个人主页，以username.github.io名创建仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#克隆仓库到本地"><span class="nav-number">3.3.</span> <span class="nav-text">克隆仓库到本地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地编辑个人静态主页"><span class="nav-number">3.4.</span> <span class="nav-text">本地编辑个人静态主页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Push-到远程仓库。"><span class="nav-number">3.5.</span> <span class="nav-text">Push 到远程仓库。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以上若都成功，访问个人主页，https-username-github-io"><span class="nav-number">3.6.</span> <span class="nav-text">以上若都成功，访问个人主页，https://username.github.io.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名注册、绑定"><span class="nav-number">4.</span> <span class="nav-text">域名注册、绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册登录阿里云"><span class="nav-number">4.1.</span> <span class="nav-text">注册登录阿里云</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#购买域名，进入控制中心"><span class="nav-number">4.2.</span> <span class="nav-text">购买域名，进入控制中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管理域名，添加域名解析"><span class="nav-number">4.3.</span> <span class="nav-text">管理域名，添加域名解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加CNAME文件到github仓库"><span class="nav-number">4.4.</span> <span class="nav-text">添加CNAME文件到github仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-安装"><span class="nav-number">5.</span> <span class="nav-text">Hexo 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装环境"><span class="nav-number">5.1.</span> <span class="nav-text">安装环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#如果安装了-Node-js-和-Git，只需要使用-npm-即可完成-Hexo-的安装"><span class="nav-number">5.1.1.</span> <span class="nav-text">如果安装了 Node.js 和 Git，只需要使用 npm 即可完成 Hexo 的安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果没有安装-Node-js-和-Git，以下均为-Mac-环境下。"><span class="nav-number">5.1.2.</span> <span class="nav-text">如果没有安装 Node.js 和 Git，以下均为 Mac 环境下。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">5.2.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化-Hexo-建站"><span class="nav-number">5.3.</span> <span class="nav-text">初始化 Hexo 建站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问-http-localhost-4000"><span class="nav-number">5.4.</span> <span class="nav-text">访问 http://localhost:4000/</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到-GitHub，前提是已经注册-GitHub，创建-username-github-io-仓库"><span class="nav-number">5.5.</span> <span class="nav-text">部署到 GitHub，前提是已经注册 GitHub，创建 username.github.io 仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-GitHub-依赖插件"><span class="nav-number">5.5.1.</span> <span class="nav-text">安装 GitHub 依赖插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置更目录下的-config-yml文件"><span class="nav-number">5.5.2.</span> <span class="nav-text">配置更目录下的 _config.yml文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署命令"><span class="nav-number">5.5.3.</span> <span class="nav-text">部署命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问个人主页"><span class="nav-number">5.6.</span> <span class="nav-text">访问个人主页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题安装"><span class="nav-number">6.</span> <span class="nav-text">主题安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载主题"><span class="nav-number">6.1.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改站点配置目录"><span class="nav-number">6.2.</span> <span class="nav-text">修改站点配置目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证主题"><span class="nav-number">6.3.</span> <span class="nav-text">验证主题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">7.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Grac Kanil</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">总字数&#58;</span>
+    
+    <span title="总字数">17.5k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'jaVf0MPQaJTV41ynO56FSKLv-gzGzoHsz',
+        appKey: 'jGHDKGiFDMJiExs4DdrjtwTG',
+        placeholder: '学习交流，欢迎指正~',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
