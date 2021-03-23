@@ -127,15 +127,10 @@
 <meta property="og:site_name" content="Grac Kanil">
 <meta property="og:description" content="分享个 XCode LLDB 调试小技巧  前言在 iOS 开发中，动画也是一个很重要的组成部分。你会不会因为动画需要有灵性，苦于一点点调试参数，但又看不清楚细节？会不会遇到 App 中某些色块一闪而过？会不会突然闪屏不知道为什么？ 当然，不可避免。 可能会用到的调试技巧或许有些人，早已知道，模拟器中，苹果提供了 Slow Animations 选项。也或许有些人还不知道，或者未尝试使用过。 模">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/show_animations.png">
-<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/device_show_animations.png">
-<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/device_show_animations_2.png">
-<meta property="og:image" content="http://oxwk2uou0.bkt.clouddn.com/device_show_animations_3.png">
-<meta property="og:updated_time" content="2019-05-01T06:04:55.324Z">
+<meta property="og:updated_time" content="2021-03-23T16:48:50.958Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 真机中设置 Slow Animations">
 <meta name="twitter:description" content="分享个 XCode LLDB 调试小技巧  前言在 iOS 开发中，动画也是一个很重要的组成部分。你会不会因为动画需要有灵性，苦于一点点调试参数，但又看不清楚细节？会不会遇到 App 中某些色块一闪而过？会不会突然闪屏不知道为什么？ 当然，不可避免。 可能会用到的调试技巧或许有些人，早已知道，模拟器中，苹果提供了 Slow Animations 选项。也或许有些人还不知道，或者未尝试使用过。 模">
-<meta name="twitter:image" content="http://oxwk2uou0.bkt.clouddn.com/show_animations.png">
 
 
 
@@ -353,8 +348,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-05-01T14:04:55+08:00">
-                2019-05-01
+              <time title="更新于" itemprop="dateModified" datetime="2021-03-24T00:48:50+08:00">
+                2021-03-24
               </time>
             
           </span>
@@ -443,9 +438,9 @@
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 iOS 开发中，动画也是一个很重要的组成部分。你会不会因为动画需要有灵性，苦于一点点调试参数，但又看不清楚细节？会不会遇到 App 中某些色块一闪而过？会不会突然闪屏不知道为什么？</p>
 <p>当然，不可避免。</p>
 <h2 id="可能会用到的调试技巧"><a href="#可能会用到的调试技巧" class="headerlink" title="可能会用到的调试技巧"></a>可能会用到的调试技巧</h2><p>或许有些人，早已知道，模拟器中，苹果提供了 <code>Slow Animations</code> 选项。也或许有些人还不知道，或者未尝试使用过。</p>
-<h3 id="模拟器开启-Slow-Animations"><a href="#模拟器开启-Slow-Animations" class="headerlink" title="模拟器开启 Slow Animations"></a>模拟器开启 <code>Slow Animations</code></h3><p>打开模拟器，<code>菜单栏</code> &gt; <code>Debug</code> &gt; <code>Show Animations</code><br><img src="http://oxwk2uou0.bkt.clouddn.com/show_animations.png" alt="模拟器 Slow Animations 截图"></p>
+<h3 id="模拟器开启-Slow-Animations"><a href="#模拟器开启-Slow-Animations" class="headerlink" title="模拟器开启 Slow Animations"></a>模拟器开启 <code>Slow Animations</code></h3><p>打开模拟器，<code>菜单栏</code> &gt; <code>Debug</code> &gt; <code>Show Animations</code></p>
 <h3 id="真机开启-Slow-Animations"><a href="#真机开启-Slow-Animations" class="headerlink" title="真机开启 Slow Animations"></a>真机开启 <code>Slow Animations</code></h3><ul>
-<li><p>可以使用 LLDB 实现 <code>Slow Animations</code><br>1) 点击 <code>Debug</code> 区域的 <code>Pause program execution</code><br><img src="http://oxwk2uou0.bkt.clouddn.com/device_show_animations.png" alt="真机 Slow Animations 截图 1"><br>2) 点击 <code>Debug</code> 区域的 LLDB 中输入命令 <code>p [(CALayer *)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] layer] setSpeed:.1f]</code><br>另外，Swift 使用 <code>p UIApplication.sharedApplication().windows.first?.layer.speed = 0.1</code> 即可。<br><img src="http://oxwk2uou0.bkt.clouddn.com/device_show_animations_2.png" alt="真机 Slow Animations 截图 2"><br>3) 点击 <code>Debug</code> 区域的 <code>Continue program execution</code><br><img src="http://oxwk2uou0.bkt.clouddn.com/device_show_animations_3.png" alt="真机 Slow Animations 截图 3"></p>
+<li><p>可以使用 LLDB 实现 <code>Slow Animations</code><br>1) 点击 <code>Debug</code> 区域的 <code>Pause program execution</code><br>2) 点击 <code>Debug</code> 区域的 LLDB 中输入命令 <code>p [(CALayer *)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] layer] setSpeed:.1f]</code><br>另外，Swift 使用 <code>p UIApplication.sharedApplication().windows.first?.layer.speed = 0.1</code> 即可。<br>3) 点击 <code>Debug</code> 区域的 <code>Continue program execution</code></p>
 </li>
 <li><p>可以代码形式实现 <code>Slow Animations</code><br><code>didFinishLaunchingWithOptions</code> 中设置 <code>self.window.layer.speed = .1f;</code></p>
 </li>
@@ -596,7 +591,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -607,7 +602,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -706,7 +701,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -720,7 +715,7 @@
     
       <span class="post-meta-item-text">总字数&#58;</span>
     
-    <span title="总字数">17.5k</span>
+    <span title="总字数">14.5k</span>
   
 </div>
 
