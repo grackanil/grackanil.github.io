@@ -1678,7 +1678,6 @@ pre .javascript .function {
   z-index: 1040;
   box-shadow: inset 2px 2px 40px #35644a;
   background: #f5f5f5;
-  background: url("/images/sidebar_bg.png");
   -webkit-transform: translateZ(0);
 }
 .sidebar a {

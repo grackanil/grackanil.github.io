@@ -140,7 +140,7 @@
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
-      userId: '0',
+      userId: 'undefined',
       author: '博主'
     },
     algolia: {
@@ -548,11 +548,6 @@ GitHub Pages 被
                       GitHub</a>
                   </span>
                 
-                  <span class="links-of-author-item">
-                    <a href="https://twitter.com/grackanil" target="_blank" title="Twitter">
-                      Twitter</a>
-                  </span>
-                
             </div>
           
 
@@ -560,20 +555,6 @@ GitHub Pages 被
           
 
           
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.ruanyifeng.com/blog/" title="ruanyifeng" target="_blank">ruanyifeng</a>
-                  </li>
-                
-              </ul>
-            </div>
           
 
           
@@ -775,28 +756,6 @@ GitHub Pages 被
 
 
 
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'jaVf0MPQaJTV41ynO56FSKLv-gzGzoHsz',
-        appKey: 'jGHDKGiFDMJiExs4DdrjtwTG',
-        placeholder: '学习交流，欢迎指正~',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
 
 
 
